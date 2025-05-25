@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2i1bfpa2vlrv"]
+
+[ext_resource type="Script" uid="uid://cuqgnnjf2oqcn" path="res://Scripts/Play Button.gd" id="1_og4jd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Play Button" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+offset_left = 433.0
+offset_top = 249.0
+offset_right = 723.0
+offset_bottom = 397.0
+text = "Play"
+script = ExtResource("1_og4jd")
+
+[connection signal="pressed" from="CanvasLayer/Play Button" to="CanvasLayer/Play Button" method="_on_pressed"]

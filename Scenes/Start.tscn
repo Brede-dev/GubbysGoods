@@ -37,9 +37,9 @@ texture = ExtResource("3_1lxxj")
 [node name="Play Button" type="Button" parent="CanvasLayer"]
 offset_left = 418.0
 offset_top = 185.0
-offset_right = 1002.0
+offset_right = 770.0
 offset_bottom = 538.0
-text = "Click the middle gubby to play
+text = "
 
 
 
@@ -58,6 +58,14 @@ text = "Click the middle gubby to play
 icon = ExtResource("3_1lxxj")
 flat = true
 script = ExtResource("1_og4jd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 578.0
+offset_top = 375.0
+offset_right = 612.0
+offset_bottom = 402.0
+text = "Play"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 0

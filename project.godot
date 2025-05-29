@@ -13,6 +13,7 @@ config_version=5
 config/name="Gubby's Goods"
 run/main_scene="uid://b2i1bfpa2vlrv"
 config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="uid://qq84q64wow64"
 
 [input]
 

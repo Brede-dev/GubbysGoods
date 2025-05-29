@@ -13,6 +13,7 @@ enum State { IDLE, RUNNING, JUMPING, FALLING, DASHING, SLIDING, CROUCHING }
 @export var dash_speed: float = 400.0
 @export var dash_time: float = 0.3
 @export var slide_time: float = 0.5
+@export var slide_speed: float = 150.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_state: State = State.IDLE
@@ -21,13 +22,18 @@ var has_double_jumped: bool = false
 var dash_timer: float = 0.0
 var dash_direction: Vector2 = Vector2.ZERO
 var slide_timer: float = 0.0
+var slide_direction: float = 0.0
+var slide_initial_velocity: float = 0.0
 
 @onready var normal_collision = $NormalCollision
 @onready var crouch_collision = $CrouchCollision
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var head_raycast = $HeadRayCast2D
 
 func _ready():
 	crouch_collision.disabled = true
+	if head_raycast:
+		head_raycast.enabled = true
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -74,17 +80,33 @@ func handle_input():
 		
 		State.SLIDING:
 			slide_timer -= get_physics_process_delta_time()
-			if slide_timer <= 0 or not crouching or not is_on_floor():
+			var head_clear = not head_raycast.is_colliding() if head_raycast else true
+			if not crouching and head_clear:
 				end_crouch()
 				current_state = State.FALLING if not is_on_floor() else State.IDLE
-		
+			elif not crouching and not head_clear:
+				current_state = State.CROUCHING  # Stay crouched if headspace is blocked
+			elif slide_timer <= 0 and head_clear:
+				if is_on_floor():
+					end_crouch()
+					current_state = State.IDLE if abs(velocity.x) < 10 else State.RUNNING
+				else:
+					end_crouch()
+					current_state = State.FALLING
+			elif not is_on_floor():
+				end_crouch()
+				current_state = State.FALLING
+
 		State.CROUCHING:
-			if Input.is_action_just_pressed(input_jump):
+			if Input.is_action_just_pressed(input_jump) and (not head_raycast.is_colliding() if head_raycast else true):
 				end_crouch()
 				jump()
-			elif not crouching or not is_on_floor():
+			elif not crouching and (not head_raycast.is_colliding() if head_raycast else true):
 				end_crouch()
 				current_state = State.FALLING if not is_on_floor() else State.IDLE
+			elif not is_on_floor():
+				end_crouch()
+				current_state = State.FALLING
 
 func update_movement(delta):
 	var direction = Input.get_axis(input_left, input_right)
@@ -102,7 +124,14 @@ func update_movement(delta):
 		State.DASHING:
 			velocity = dash_direction * dash_speed
 		State.SLIDING:
-			velocity.x = move_toward(velocity.x, 0, speed * delta)
+			var head_clear = not head_raycast.is_colliding() if head_raycast else true
+			if head_clear:
+				# Decelerate only when head is clear
+				velocity.x = move_toward(velocity.x, 0, speed * 3 * delta)
+			else:
+				# Maintain initial slide velocity while under a block
+				velocity.x = slide_initial_velocity
+			animated_sprite.flip_h = slide_initial_velocity < 0
 		State.CROUCHING:
 			velocity.x = move_toward(velocity.x, 0, speed * 4 * delta)
 
@@ -140,6 +169,11 @@ func start_slide():
 		normal_collision.disabled = true
 		crouch_collision.disabled = false
 		slide_timer = slide_time
+		slide_direction = Input.get_axis(input_left, input_right)
+		if slide_direction == 0:
+			slide_direction = -1 if animated_sprite.flip_h else 1
+		# Use current velocity if significant, otherwise use slide_speed
+		slide_initial_velocity = velocity.x if abs(velocity.x) >= slide_speed else slide_direction * slide_speed
 		current_state = State.SLIDING
 
 func start_crouch():
@@ -149,5 +183,6 @@ func start_crouch():
 		current_state = State.CROUCHING
 
 func end_crouch():
-	normal_collision.disabled = false
-	crouch_collision.disabled = true
+	if not head_raycast or not head_raycast.is_colliding():
+		normal_collision.disabled = false
+		crouch_collision.disabled = true

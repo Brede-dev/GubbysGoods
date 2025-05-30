@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mwd4pniii5t7"
+path="res://.godot/imported/ambience (mp3cut.net).mp3-10af304cb75adc919ad1c9e8195aeab3.mp3str"
+
+[deps]
+
+source_file="res://Sounds/ambience (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/ambience (mp3cut.net).mp3-10af304cb75adc919ad1c9e8195aeab3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

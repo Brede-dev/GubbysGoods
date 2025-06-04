@@ -11,9 +11,10 @@ enum State { IDLE, RUNNING, JUMPING, FALLING, DASHING, SLIDING, CROUCHING }
 @export var speed: float = 200.0
 @export var jump_velocity: float = -400.0
 @export var dash_speed: float = 400.0
-@export var dash_time: float = 0.3
+@export var dash_time: float = 0.25
 @export var slide_time: float = 0.5
 @export var slide_speed: float = 150.0
+@export var coyote_time: float = 0.5  # Added: Duration for coyote jump window
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_state: State = State.IDLE
@@ -24,6 +25,7 @@ var dash_direction: Vector2 = Vector2.ZERO
 var slide_timer: float = 0.0
 var slide_direction: float = 0.0
 var slide_initial_velocity: float = 0.0
+var coyote_timer: float = 0.0  # Added: Timer to track time since last grounded
 
 @onready var normal_collision = $NormalCollision
 @onready var crouch_collision = $CrouchCollision
@@ -38,6 +40,9 @@ func _ready():
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		coyote_timer += delta  # Added: Increment coyote timer when not on floor
+	else:
+		coyote_timer = 0.0  # Added: Reset coyote timer when on floor
 	
 	handle_input()
 	update_movement(delta)
@@ -50,10 +55,11 @@ func handle_input():
 	
 	match current_state:
 		State.IDLE, State.RUNNING:
-			if not is_on_floor():
+			if not is_on_floor() and coyote_timer > coyote_time:  # Modified: Check coyote time
 				current_state = State.FALLING
 			elif Input.is_action_just_pressed(input_jump):
-				jump()
+				if is_on_floor() or coyote_timer <= coyote_time:  # Modified: Allow jump during coyote time
+					jump()
 			elif Input.is_action_just_pressed(input_dash):
 				start_dash()
 			elif crouching and moving:
@@ -85,7 +91,7 @@ func handle_input():
 				end_crouch()
 				current_state = State.FALLING if not is_on_floor() else State.IDLE
 			elif not crouching and not head_clear:
-				current_state = State.CROUCHING  # Stay crouched if headspace is blocked
+				current_state = State.CROUCHING
 			elif slide_timer <= 0 and head_clear:
 				if is_on_floor():
 					end_crouch()
@@ -100,7 +106,8 @@ func handle_input():
 		State.CROUCHING:
 			if Input.is_action_just_pressed(input_jump) and (not head_raycast.is_colliding() if head_raycast else true):
 				end_crouch()
-				jump()
+				if is_on_floor() or coyote_timer <= coyote_time:  # Modified: Allow jump during coyote time
+					jump()
 			elif not crouching and (not head_raycast.is_colliding() if head_raycast else true):
 				end_crouch()
 				current_state = State.FALLING if not is_on_floor() else State.IDLE
@@ -126,10 +133,8 @@ func update_movement(delta):
 		State.SLIDING:
 			var head_clear = not head_raycast.is_colliding() if head_raycast else true
 			if head_clear:
-				# Decelerate only when head is clear
 				velocity.x = move_toward(velocity.x, 0, speed * 3 * delta)
 			else:
-				# Maintain initial slide velocity while under a block
 				velocity.x = slide_initial_velocity
 			animated_sprite.flip_h = slide_initial_velocity < 0
 		State.CROUCHING:
@@ -150,6 +155,8 @@ func jump():
 	can_double_jump = true
 	has_double_jumped = false
 	current_state = State.JUMPING
+	if not is_on_floor():  # Added: Consume coyote time on jump
+		coyote_timer = coyote_time + 1.0  # Prevent further coyote jumps
 
 func double_jump():
 	velocity.y = jump_velocity * 0.8
@@ -172,7 +179,6 @@ func start_slide():
 		slide_direction = Input.get_axis(input_left, input_right)
 		if slide_direction == 0:
 			slide_direction = -1 if animated_sprite.flip_h else 1
-		# Use current velocity if significant, otherwise use slide_speed
 		slide_initial_velocity = velocity.x if abs(velocity.x) >= slide_speed else slide_direction * slide_speed
 		current_state = State.SLIDING
 

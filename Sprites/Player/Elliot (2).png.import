@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qq84q64wow64"
-path="res://.godot/imported/Gubby (1)-1.png.png-fd054294c32f74927b19dce518985be3.ctex"
+uid="uid://gux45185nlig"
+path="res://.godot/imported/Elliot (2).png-bf4fdc8475c345c3a48e1c1a2eb161ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Gubby (1)-1.png.png"
-dest_files=["res://.godot/imported/Gubby (1)-1.png.png-fd054294c32f74927b19dce518985be3.ctex"]
+source_file="res://Sprites/Player/Elliot (2).png"
+dest_files=["res://.godot/imported/Elliot (2).png-bf4fdc8475c345c3a48e1c1a2eb161ad.ctex"]
 
 [params]
 

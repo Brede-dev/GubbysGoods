@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gux45185nlig"
-path="res://.godot/imported/Elliot (2).png-c8e154bb6e205e373c901ad9dd044dbc.ctex"
+uid="uid://d0dtthwu41pbe"
+path="res://.godot/imported/Player Tileset.png-f84cf4086ea6ffcf543f01bed336cdc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Elliot (2).png"
-dest_files=["res://.godot/imported/Elliot (2).png-c8e154bb6e205e373c901ad9dd044dbc.ctex"]
+source_file="res://Sprites/Player/Player Tileset.png"
+dest_files=["res://.godot/imported/Player Tileset.png-f84cf4086ea6ffcf543f01bed336cdc5.ctex"]
 
 [params]
 

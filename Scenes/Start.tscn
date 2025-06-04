@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2i1bfpa2vlrv"]
 
 [ext_resource type="Script" uid="uid://cuqgnnjf2oqcn" path="res://Scripts/Play Button.gd" id="1_og4jd"]
-[ext_resource type="Texture2D" uid="uid://ckknedfa0bor5" path="res://Sprites/text-1748390942834 (1).png" id="2_y4ycm"]
-[ext_resource type="Texture2D" uid="uid://qq84q64wow64" path="res://Sprites/Gubby (1)-1.png.png" id="3_1lxxj"]
+[ext_resource type="Texture2D" uid="uid://ckknedfa0bor5" path="res://Sprites/UI Buttons/Buttons Customization/text-1748390942834 (1).png" id="2_y4ycm"]
+[ext_resource type="Texture2D" uid="uid://qq84q64wow64" path="res://Sprites/Player/Gubby (1)-1.png.png" id="3_1lxxj"]
 [ext_resource type="Texture2D" uid="uid://cx0kajda0ygl2" path="res://Sprites/Cave Tileset/cavesofgallet.png" id="4_1lxxj"]
 
 [node name="Control" type="Control"]

@@ -14,7 +14,7 @@ enum State { IDLE, RUNNING, JUMPING, FALLING, DASHING, SLIDING, CROUCHING }
 @export var dash_time: float = 0.25
 @export var slide_time: float = 0.5
 @export var slide_speed: float = 150.0
-@export var coyote_time: float = 0.5  # Added: Duration for coyote jump window
+@export var coyote_time: float = 10  # Added: Duration for coyote jump window
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_state: State = State.IDLE
@@ -192,3 +192,8 @@ func end_crouch():
 	if not head_raycast or not head_raycast.is_colliding():
 		normal_collision.disabled = false
 		crouch_collision.disabled = true
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		get_tree().reload_current_scene()

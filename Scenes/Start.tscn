@@ -73,11 +73,11 @@ script = ExtResource("5_lmkek")
 [node name="Settings" type="RichTextLabel" parent="CanvasLayer/Settings Button"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 145.0
-offset_top = 193.0
-offset_right = 218.0
-offset_bottom = 218.0
-text = "Settings"
+offset_left = 156.0
+offset_top = 194.0
+offset_right = 229.0
+offset_bottom = 219.0
+text = "Info"
 
 [node name="Exit Button" type="Button" parent="CanvasLayer"]
 modulate = Color(0.80459, 0.0750017, 6.73831e-07, 1)

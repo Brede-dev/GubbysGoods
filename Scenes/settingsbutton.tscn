@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c172jx1ipdkvp"]
 
-[ext_resource type="Texture2D" uid="uid://cde4k2htet1ro" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Settings/Settings1.png" id="1_ixkud"]
 [ext_resource type="Texture2D" uid="uid://cjhqlovyfxsya" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Back/B_Back1.png" id="2_31ksu"]
+[ext_resource type="Texture2D" uid="uid://bjqrgyvktjbxx" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Info/Info1.png" id="3_ixkud"]
 [ext_resource type="Script" uid="uid://b24ueudno8eqp" path="res://button.gd" id="3_xeucv"]
 
 [node name="Settings" type="Control"]
@@ -13,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Back Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 44.0
 offset_top = 32.0
 offset_right = 352.0
@@ -23,9 +24,34 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("3_xeucv")
 
-[node name="Settings1" type="Sprite2D" parent="."]
-position = Vector2(564, 77)
-scale = Vector2(3.38542, 4.03125)
-texture = ExtResource("1_ixkud")
+[node name="Info1" type="Sprite2D" parent="."]
+position = Vector2(575, 87)
+scale = Vector2(3.29688, 3.75)
+texture = ExtResource("3_ixkud")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 147.0
+offset_right = 385.0
+offset_bottom = 349.0
+scale = Vector2(1.5, 1.5)
+text = "Keyboard Controls:
+	Move left - A
+	Move right - D
+	Jump - W
+	Double jump - W + W
+	Interact with UI - Left Mouse Button"
+tab_size = 8
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 134.0
+offset_right = 937.0
+offset_bottom = 327.0
+scale = Vector2(1.5, 1.5)
+text = "IMPORTANT INFORMATION:
+Upon leaving the game or returning to the menu. No progress will be saved. You must complete all levels in one go. "
 
 [connection signal="pressed" from="Back Button" to="Back Button" method="_on_pressed"]

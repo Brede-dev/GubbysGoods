@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp30bl6d7nwoh"
+path="res://.godot/imported/Gubby Sound Effect.mp3-0526c190a992eda67fd783fa859b9048.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Gubby Sound Effect.mp3"
+dest_files=["res://.godot/imported/Gubby Sound Effect.mp3-0526c190a992eda67fd783fa859b9048.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2i1bfpa2vlrv"]
+[gd_scene load_steps=7 format=3 uid="uid://b2i1bfpa2vlrv"]
 
 [ext_resource type="Script" uid="uid://cuqgnnjf2oqcn" path="res://Scripts/Play Button.gd" id="1_og4jd"]
 [ext_resource type="Texture2D" uid="uid://ckknedfa0bor5" path="res://Sprites/UI Buttons/Buttons Customization/text-1748390942834 (1).png" id="2_y4ycm"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cx0kajda0ygl2" path="res://Sprites/Cave Tileset/cavesofgallet.png" id="4_1lxxj"]
 [ext_resource type="Script" uid="uid://edvjn70td333" path="res://Scenes/exit_button.gd" id="5_37b1d"]
 [ext_resource type="Script" uid="uid://cvbxdrafox56e" path="res://Scenes/settings_button.gd" id="5_lmkek"]
-[ext_resource type="AudioStream" uid="uid://dp30bl6d7nwoh" path="res://Sounds/Gubby Sound Effect.mp3" id="7_7aetl"]
-[ext_resource type="Script" uid="uid://pkfakt33ls81" path="res://Scenes/audio_stream_player.gd" id="8_27w08"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -102,23 +100,6 @@ text = "Exit"
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 0
 
-[node name="squeak" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_7aetl")
-volume_db = 21.55
-parameters/looping = true
-script = ExtResource("8_27w08")
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1027.0
-offset_top = 501.0
-offset_right = 1375.0
-offset_bottom = 849.0
-scale = Vector2(0.5, 0.5)
-icon = ExtResource("3_1lxxj")
-flat = true
-
 [connection signal="pressed" from="CanvasLayer/Play Button" to="CanvasLayer/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Settings Button" to="CanvasLayer/Settings Button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Exit Button" to="CanvasLayer/Exit Button" method="_on_pressed"]
-[connection signal="pressed" from="Button" to="squeak" method="_on_button_pressed"]

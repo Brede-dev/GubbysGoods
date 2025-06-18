@@ -12,8 +12,8 @@ enum State { IDLE, RUNNING, JUMPING, FALLING, DASHING, SLIDING, CROUCHING }
 @export var jump_velocity: float = -400.0
 @export var dash_speed: float = 400.0
 @export var dash_time: float = 0.25
-@export var slide_time: float = 0.5
-@export var slide_speed: float = 150.0
+@export var slide_time: float = 0.2
+@export var slide_speed: float = 100.0
 @export var coyote_time: float = 10  # Added: Duration for coyote jump window
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

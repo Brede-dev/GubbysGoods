@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://y3stpb8vdj8g"]
+
+[ext_resource type="Texture2D" uid="uid://chh6361qk403v" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Quit/C_Quit1.png" id="1_if853"]
+
+[node name="death_screen" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(9, 9)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -35.0
+offset_top = -34.0
+offset_right = 35.0
+offset_bottom = -11.0
+text = "You died"
+scroll_active = false
+
+[node name="Button" type="Button" parent="."]
+offset_left = 12.0
+offset_top = 2.0
+offset_right = 116.0
+offset_bottom = 42.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("1_if853")
+flat = true

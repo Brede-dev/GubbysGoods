@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://bpl8w6m1vxbrx"]
+[gd_scene load_steps=15 format=4 uid="uid://bpl8w6m1vxbrx"]
 
 [ext_resource type="Texture2D" uid="uid://4bu7857v4j3a" path="res://Sprites/Cave Tileset/cavesofgallet_tiles.png" id="1_l5t5q"]
 [ext_resource type="Texture2D" uid="uid://5xe2ardasubl" path="res://Sprites/Cave Tileset/liquids animations (1).png" id="2_1txte"]
 [ext_resource type="Texture2D" uid="uid://wktqdfgm0v8j" path="res://Sprites/Gubby.png" id="3_26557"]
+[ext_resource type="Texture2D" uid="uid://3obl4eh1304s" path="res://Sprites/Player/pizza.png" id="4_1txte"]
+[ext_resource type="Texture2D" uid="uid://buig7x1nfmc5p" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Restart/B_Restart1.png" id="5_luvg0"]
+[ext_resource type="Script" uid="uid://662ee67b2gxe" path="res://restart_button.gd" id="6_5hoe6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_luvg0"]
 texture = ExtResource("1_l5t5q")
@@ -162,13 +165,86 @@ texture = ExtResource("3_26557")
 0:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ufkpf"]
+tile_size = Vector2i(1, 1)
 sources/0 = SubResource("TileSetAtlasSource_4kgk1")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26557"]
+atlas = ExtResource("4_1txte")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luvg0"]
+atlas = ExtResource("4_1txte")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5hoe6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26557")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luvg0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="Win screen" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAMAPj/AQABAAEAAAANAPj/AQABAAEAAAAOAPj/AQABAAEAAAAPAPj/AQABAAEAAAAQAPj/AQABAAEAAAARAPj/AQABAAEAAAASAPj/AQABAAEAAAAOAPf/AQAGAAIAAAAPAPf/AQAGAAEAAAAQAPf/AQAGAAIAABA=")
+tile_map_data = PackedByteArray("AAANAPj/AQABAAEAAAAOAPj/AQABAAEAAAAPAPj/AQABAAEAAAAQAPf/AQAGAAEAAAAQAPj/AQABAAEAAAARAPj/AQABAAEAAAASAPj/AQABAAEAAAARAPf/AQAGAAIAABATAPj/AQAAAAEAABAOAPf/AQAGAAIAAAAPAPf/AQAGAAEAAAAMAPj/AQAAAAEAAAAIAPj/AwAAAAoAABAJAPf/AwAAAAUAAAAJAPj/AwAAAAsAAAAKAPf/AwAAAAQAABAKAPj/AwAAAAoAAAAHAPj/AwAAAAkAABAIAPf/AwAAAAYAABAJAO//AQABAAEAADAJAPD/AwAAAAIAAAAJAPH/AwAAAAIAAAAJAPL/AwAAAAIAAAAJAPP/AwAAAAIAAAAJAPT/AwAAAAIAAAAJAPX/AwAAAAIAAAAJAPb/AwAAAAIAAAAVAPf/AwAAAAQAAAAVAPj/AwAAAAoAABAWAPf/AwAAAAUAAAAWAPj/AwAAAAsAAAAXAPj/AwAAAAoAAAAWAO//AQABAAEAADAWAPD/AwAAAAIAAAAWAPH/AwAAAAIAAAAWAPL/AwAAAAIAAAAWAPP/AwAAAAIAAAAWAPT/AwAAAAIAAAAWAPX/AwAAAAIAAAAWAPb/AwAAAAIAAAAXAPf/AwAAAAYAAAAYAPj/AwAAAAkAAAALAPj/AwAAAAkAAAAUAPj/AwAAAAkAABALAPn/AQABAAEAAAAKAPn/AQABAAEAAAAJAPn/AQABAAEAAAAIAPn/AQABAAEAAAAHAPn/AQABAAEAAAAUAPn/AQABAAEAAAAVAPn/AQABAAEAAAAWAPn/AQABAAEAAAAXAPn/AQABAAEAAAAYAPn/AQABAAEAAAAMAPn/AQACAAEAAAATAPn/AQACAAEAABAGAPj/AQAAAAIAADAGAPf/AQAAAAIAADAGAPb/AQAAAAIAADAGAPX/AQAAAAIAADAGAPT/AQAAAAIAADAGAPP/AQAAAAIAADAGAPL/AQAAAAIAADAGAPH/AQAAAAIAADAGAPD/AQAAAAIAADAHAO//AQABAAEAADAIAO//AQABAAEAADAKAO//AQABAAEAADALAO//AQABAAEAADAMAO//AQABAAEAADANAO//AQABAAEAADAOAO//AQABAAEAADAPAO//AQABAAEAADAQAO//AQABAAEAADARAO//AQABAAEAADASAO//AQABAAEAADATAO//AQABAAEAADAUAO//AQABAAEAADAVAO//AQABAAEAADAXAO//AQABAAEAADAYAO//AQABAAEAADAZAPj/AQAAAAIAAAAZAPf/AQAAAAIAAAAZAPb/AQAAAAIAAAAZAPX/AQAAAAIAAAAZAPT/AQAAAAIAAAAZAPP/AQAAAAIAAAAZAPL/AQAAAAIAAAAZAPH/AQAAAAIAAAAZAPD/AQAAAAIAAAAGAO//AQACAAEAADAZAO//AQACAAEAAGAZAPn/AQACAAEAAAAGAPn/AQACAAEAAFAUAPD/AQAHAAoAAAANAPD/AQAHAAoAABAIAPD/AQAHAAoAABAYAPD/AQAHAAoAAAASAPD/AQAGAAoAAAALAPD/AQAGAAoAABAHAPH/AQACAAMAAHAHAPP/AQACAAMAAHAHAPX/AQACAAMAAHAHAPb/AQACAAMAAHAYAPL/AQACAAMAAEAYAPP/AQACAAMAAEAYAPf/AQACAAMAAEAYAPX/AQACAAMAAEATAPf/AQACAAMAABAMAPf/AQACAAMAABAOAPP/AQAGAAEAAAAPAPP/AQAGAAEAAAAQAPP/AQAGAAEAAAARAPP/AQAGAAEAAAAOAPD/AQAHAAAAAAAOAPH/AQAHAAAAAAAOAPL/AQAHAAAAAAARAPD/AQAHAAAAAAARAPH/AQAHAAAAAAARAPL/AQAHAAAAAAAHAPT/AQACAAIAAAAHAPL/AQACAAIAAAAHAPf/AQACAAIAAAAYAPb/AQACAAIAABAYAPT/AQACAAIAABAYAPH/AQACAAIAABAXAPD/AQACAAIAAEATAPD/AQACAAIAAEAVAPD/AQACAAIAAFAMAPD/AQACAAIAAFAPAPD/AQACAAIAAEAQAPD/AQACAAIAAFAKAPD/AQACAAIAAFAHAPD/AQACAAIAAEALAPH/AQABAAcAAAAMAPP/AQABAAcAAAASAPT/AQABAAcAAAATAPT/AQABAAcAAAATAPL/AQABAAcAAAAVAPX/AQABAAcAAAAXAPL/AQABAAcAAAALAPX/AQABAAcAAAAIAPL/AQABAAcAAAAPAPT/AQABAAIAAAANAPT/AQABAAIAAAALAPP/AQABAAIAAAAIAPT/AQABAAIAAAALAPf/AQABAAIAAAAUAPf/AQABAAIAAAAVAPL/AQABAAIAAAANAPH/AQABAAIAAAAQAPH/AQABAAIAAAAUAPP/AQADAAAAAAAUAPb/AQADAAAAAAAXAPT/AQADAAAAAAAPAPL/AQADAAAAAAAQAPX/AQADAAAAAAAPAPb/AQADAAAAAAAKAPb/AQADAAAAAAAIAPP/AQADAAAAAAASAPf/AQADAAAAAAANAPf/AQADAAAAAAANAPX/AQADAAAAAAAKAPH/AQAGAAAAAAAMAPL/AQAGAAAAAAAPAPH/AQAGAAAAAAAQAPL/AQAGAAAAAAARAPT/AQAGAAAAAAAUAPH/AQAGAAAAAAAXAPH/AQAGAAAAAAAXAPX/AQAGAAAAAAASAPP/AQAGAAAAAAAIAPb/AQAGAAAAAAA=")
 tile_set = SubResource("TileSet_g6jvr")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AACYALj/AAAAAAEAAABnALj/AAAAAAEAABA=")
 tile_set = SubResource("TileSet_ufkpf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(135, -77)
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_5hoe6")
+autoplay = "default"
+frame_progress = 0.101383
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(121, -77)
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_5hoe6")
+autoplay = "default"
+frame_progress = 0.389108
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, -88)
+zoom = Vector2(7, 7)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 105.0
+offset_top = -105.0
+offset_right = 174.0
+offset_bottom = -80.0
+scale = Vector2(0.6, 0.6)
+text = "You win!"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 101.0
+offset_top = -124.0
+offset_right = 309.0
+offset_bottom = -74.0
+scale = Vector2(0.25, 0.25)
+text = "You successfully delivered 
+the pizza to the gubbys!"
+scroll_active = false
+
+[node name="retard button" type="Button" parent="."]
+offset_left = 103.0
+offset_top = -61.0
+offset_right = 207.0
+offset_bottom = -21.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("5_luvg0")
+flat = true
+script = ExtResource("6_5hoe6")
+
+[connection signal="pressed" from="retard button" to="retard button" method="_on_pressed"]

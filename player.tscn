@@ -1,0 +1,232 @@
+[gd_scene load_steps=30 format=3 uid="uid://y4vjepug1yfk"]
+
+[ext_resource type="Script" uid="uid://dfirfs3haff65" path="res://Scripts/character_body_2d.gd" id="1_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://bko53pbiblu7y" path="res://Sprites/Player/Elliot (5).png" id="2_dw050"]
+[ext_resource type="Texture2D" uid="uid://xu0u5c15j4lb" path="res://Sprites/Player/Elliot (1).png" id="3_b26j0"]
+[ext_resource type="Texture2D" uid="uid://d0dtthwu41pbe" path="res://Sprites/Player/Player Tileset.png" id="4_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://3obl4eh1304s" path="res://Sprites/Player/pizza.png" id="5_nvl01"]
+[ext_resource type="Texture2D" uid="uid://d4lvnyv1lvqfx" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Menu/B_Menu1.png" id="6_ivps1"]
+[ext_resource type="Script" uid="uid://b8bw2eqfcg1qc" path="res://menu_button.gd" id="7_urp6f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7jktm"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ryrav"]
+radius = 7.07107
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80cx4"]
+atlas = ExtResource("2_dw050")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iotsf"]
+atlas = ExtResource("3_b26j0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc2xo"]
+atlas = ExtResource("3_b26j0")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_215e1"]
+atlas = ExtResource("3_b26j0")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sc4i"]
+atlas = ExtResource("3_b26j0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5wjh"]
+atlas = ExtResource("4_n7ghd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vef74"]
+atlas = ExtResource("4_n7ghd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hve3p"]
+atlas = ExtResource("4_n7ghd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfdv2"]
+atlas = ExtResource("4_n7ghd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feb5d"]
+atlas = ExtResource("4_n7ghd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2o6t"]
+atlas = ExtResource("4_n7ghd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc0e3"]
+atlas = ExtResource("4_n7ghd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jktm"]
+atlas = ExtResource("4_n7ghd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryrav"]
+atlas = ExtResource("4_n7ghd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eow3j"]
+atlas = ExtResource("4_n7ghd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8heu"]
+atlas = ExtResource("2_dw050")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fc0e3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80cx4")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iotsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc2xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_215e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sc4i")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5wjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vef74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hve3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfdv2")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 17.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feb5d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2o6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc0e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jktm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryrav")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eow3j")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8heu")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvswv"]
+atlas = ExtResource("5_nvl01")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
+atlas = ExtResource("5_nvl01")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e36ub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvswv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boyg6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_1jxqw")
+metadata/_edit_group_ = true
+
+[node name="NormalCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7jktm")
+
+[node name="CrouchCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_ryrav")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fc0e3")
+animation = &"jump"
+autoplay = "idle"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(18, 1)
+sprite_frames = SubResource("SpriteFrames_e36ub")
+autoplay = "default"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AnimatedSprite2D"]
+offset_left = -280.0
+offset_top = -153.0
+offset_right = -7.0
+offset_bottom = -124.0
+text = "Objective: Deliver pizza to Gubby"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Menu Button" type="Button" parent="Camera2D"]
+offset_left = 196.0
+offset_top = -162.0
+offset_right = 300.0
+offset_bottom = -122.0
+icon = ExtResource("6_ivps1")
+flat = true
+script = ExtResource("7_urp6f")
+
+[node name="HeadRayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -16)
+
+[connection signal="pressed" from="Camera2D/Menu Button" to="Camera2D/Menu Button" method="_on_pressed"]

@@ -197,3 +197,8 @@ func end_crouch():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		get_tree().reload_current_scene()
+
+
+func _on_area_2d_area_entered(body: Area2D) -> void:
+	if body.name == "NormalCollision":
+		get_tree().change_scene_to_file("res://win_screen.tscn")

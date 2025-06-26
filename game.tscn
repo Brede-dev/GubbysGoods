@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://bepblmjfo4y86"]
+[gd_scene load_steps=15 format=4 uid="uid://bepblmjfo4y86"]
 
 [ext_resource type="Texture2D" uid="uid://5xe2ardasubl" path="res://Sprites/Cave Tileset/liquids animations (1).png" id="1_eow3j"]
 [ext_resource type="Texture2D" uid="uid://wktqdfgm0v8j" path="res://Sprites/Gubby.png" id="3_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://y4vjepug1yfk" path="res://player.tscn" id="4_eow3j"]
 [ext_resource type="Texture2D" uid="uid://4bu7857v4j3a" path="res://Sprites/Cave Tileset/cavesofgallet_tiles.png" id="5_7jktm"]
-[ext_resource type="AudioStream" uid="uid://mwd4pniii5t7" path="res://Sounds/ambience (mp3cut.net).mp3" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://dqdlnhw4df3bj" path="res://delivery_area.tscn" id="7_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://qq84q64wow64" path="res://Sprites/Player/Gubby (1)-1.png.png" id="12_iotsf"]
 
@@ -291,11 +290,6 @@ scale = Vector2(0.5, 0.5)
 text = "You die instantly upon 
      contact with lava"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_ryrav")
-autoplay = true
-parameters/looping = true
-
 [node name="Spikes" type="Node2D" parent="."]
 
 [node name="Spikes" type="StaticBody2D" parent="Spikes"]
@@ -303,7 +297,7 @@ position = Vector2(215, 60)
 scale = Vector2(5.07558, 0.272055)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -316,7 +310,7 @@ position = Vector2(756, -139)
 scale = Vector2(2.14139, 0.12865)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes2"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes2" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes2/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -329,7 +323,7 @@ position = Vector2(1206, -202)
 scale = Vector2(8.94417, 0.526425)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes3"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes3" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes3/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -342,7 +336,7 @@ position = Vector2(1377, -302)
 scale = Vector2(8.94417, 0.526425)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes4"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes4" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes4/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -355,7 +349,7 @@ position = Vector2(1525, -360)
 scale = Vector2(6.47314, 0.439206)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes5"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes5" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes5/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -368,7 +362,7 @@ position = Vector2(2169, -3)
 scale = Vector2(19.1971, -0.702089)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes7"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes7" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes7/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -381,7 +375,7 @@ position = Vector2(2417, -26)
 scale = Vector2(7.25861, 3.49965)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes8"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes8" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes8/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -394,7 +388,7 @@ position = Vector2(3136, 305)
 scale = Vector2(25.2586, 2.45965)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes9"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes9" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes9/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -407,7 +401,7 @@ position = Vector2(4096, 335)
 scale = Vector2(57.2586, 1.01965)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes10"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes10" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes10/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -420,7 +414,7 @@ position = Vector2(3048, -40)
 scale = Vector2(3.37413, -2.95082)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes11"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes11" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes11/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -433,7 +427,7 @@ position = Vector2(3288, -243)
 scale = Vector2(8.49792, 1.05387)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes12"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes12" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes12/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")
@@ -446,7 +440,7 @@ position = Vector2(3976, -269)
 scale = Vector2(59.4586, 2.45965)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Spikes/Spikes13"]
+[node name="Area2D" type="Area2D" parent="Spikes/Spikes13" groups=["Kill"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/Spikes13/Area2D"]
 shape = SubResource("RectangleShape2D_vef74")

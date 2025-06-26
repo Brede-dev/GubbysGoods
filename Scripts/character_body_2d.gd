@@ -59,6 +59,7 @@ func handle_input():
 				current_state = State.FALLING
 			elif Input.is_action_just_pressed(input_jump):
 				if is_on_floor() or coyote_timer <= coyote_time:  # Modified: Allow jump during coyote time
+					$JumpSound.play()
 					jump()
 			elif Input.is_action_just_pressed(input_dash):
 				start_dash()
@@ -73,6 +74,7 @@ func handle_input():
 		
 		State.JUMPING, State.FALLING:
 			if Input.is_action_just_pressed(input_jump) and can_double_jump:
+				$JumpSound.play()
 				double_jump()
 			elif Input.is_action_just_pressed(input_dash):
 				start_dash()
@@ -202,3 +204,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_area_entered(body: Area2D) -> void:
 	if body.name == "NormalCollision":
 		get_tree().change_scene_to_file("res://win_screen.tscn")
+
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Kill"):
+		$DeathSound.play()
+		get_tree().change_scene_to_file("res://death_screen.tscn")

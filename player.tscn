@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://y4vjepug1yfk"]
+[gd_scene load_steps=33 format=3 uid="uid://y4vjepug1yfk"]
 
 [ext_resource type="Script" uid="uid://dfirfs3haff65" path="res://Scripts/character_body_2d.gd" id="1_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://bko53pbiblu7y" path="res://Sprites/Player/Elliot (5).png" id="2_dw050"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://3obl4eh1304s" path="res://Sprites/Player/pizza.png" id="5_nvl01"]
 [ext_resource type="Texture2D" uid="uid://d4lvnyv1lvqfx" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Menu/B_Menu1.png" id="6_ivps1"]
 [ext_resource type="Script" uid="uid://b8bw2eqfcg1qc" path="res://menu_button.gd" id="7_urp6f"]
+[ext_resource type="AudioStream" uid="uid://dp30bl6d7nwoh" path="res://Sounds/Gubby Sound Effect.mp3" id="8_dw050"]
+[ext_resource type="AudioStream" uid="uid://b723abcxn6kr8" path="res://Sounds/hit01.wav" id="9_b26j0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7jktm"]
 radius = 8.0
@@ -186,6 +188,8 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_1jxqw")
 metadata/_edit_group_ = true
@@ -229,4 +233,18 @@ script = ExtResource("7_urp6f")
 [node name="HeadRayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, -16)
 
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_1jxqw")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_dw050")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_b26j0")
+volume_db = -4.685
+
 [connection signal="pressed" from="Camera2D/Menu Button" to="Camera2D/Menu Button" method="_on_pressed"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

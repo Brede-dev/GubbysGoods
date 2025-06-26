@@ -1,25 +1,209 @@
-[gd_scene load_steps=2 format=3 uid="uid://y3stpb8vdj8g"]
+[gd_scene load_steps=12 format=4 uid="uid://y3stpb8vdj8g"]
 
 [ext_resource type="Texture2D" uid="uid://chh6361qk403v" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Quit/C_Quit1.png" id="1_if853"]
+[ext_resource type="Texture2D" uid="uid://4bu7857v4j3a" path="res://Sprites/Cave Tileset/cavesofgallet_tiles.png" id="1_nus4h"]
+[ext_resource type="Texture2D" uid="uid://5xe2ardasubl" path="res://Sprites/Cave Tileset/liquids animations (1).png" id="2_b1ui3"]
+[ext_resource type="Script" uid="uid://bfuiwsmb3uuxu" path="res://quit_button.gd" id="2_f562y"]
+[ext_resource type="Texture2D" uid="uid://cd8ekyybkai8d" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Restart/A_Restart1.png" id="3_s44ck"]
+[ext_resource type="Script" uid="uid://662ee67b2gxe" path="res://restart_button.gd" id="4_nus4h"]
+[ext_resource type="Texture2D" uid="uid://cq3apw6qf4r5l" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Menu/C_Menu1.png" id="5_b1ui3"]
+[ext_resource type="Script" uid="uid://b8bw2eqfcg1qc" path="res://menu_button.gd" id="6_7ahhq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ahhq"]
+texture = ExtResource("1_nus4h")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+6:3/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+7:4/0 = 0
+7:5/0 = 0
+7:6/0 = 0
+7:7/0 = 0
+7:8/0 = 0
+7:9/0 = 0
+7:10/0 = 0
+6:10/0 = 0
+5:10/0 = 0
+4:10/0 = 0
+4:11/0 = 0
+3:11/0 = 0
+2:11/0 = 0
+1:11/0 = 0
+0:11/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+3:9/0 = 0
+2:9/0 = 0
+1:9/0 = 0
+0:9/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+6:7/0 = 0
+5:7/0 = 0
+4:7/0 = 0
+3:7/0 = 0
+2:7/0 = 0
+1:7/0 = 0
+0:7/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+5:6/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+2:4/0 = 0
+1:4/0 = 0
+0:4/0 = 0
+3:5/0 = 0
+6:6/0 = 0
+4:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u708n"]
+texture = ExtResource("2_b1ui3")
+texture_region_size = Vector2i(8, 8)
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/0 = 0
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/0 = 0
+0:3/animation_frame_0/duration = 1.0
+0:3/animation_frame_1/duration = 1.0
+0:3/0 = 0
+0:4/animation_frame_0/duration = 1.0
+0:4/animation_frame_1/duration = 1.0
+0:4/0 = 0
+0:5/animation_frame_0/duration = 1.0
+0:5/animation_frame_1/duration = 1.0
+0:5/animation_frame_2/duration = 1.0
+0:5/0 = 0
+0:6/animation_frame_0/duration = 1.0
+0:6/animation_frame_1/duration = 1.0
+0:6/0 = 0
+0:7/animation_frame_0/duration = 1.0
+0:7/animation_frame_1/duration = 1.0
+0:7/0 = 0
+0:8/animation_frame_0/duration = 1.0
+0:8/animation_frame_1/duration = 1.0
+0:8/animation_frame_2/duration = 1.0
+0:8/0 = 0
+0:9/animation_frame_0/duration = 1.0
+0:9/animation_frame_1/duration = 1.0
+0:9/0 = 0
+0:10/animation_frame_0/duration = 1.0
+0:10/animation_frame_1/duration = 1.0
+0:10/0 = 0
+0:11/animation_frame_0/duration = 1.0
+0:11/animation_frame_1/duration = 1.0
+0:11/0 = 0
+0:12/animation_frame_0/duration = 1.0
+0:12/animation_frame_1/duration = 1.0
+0:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_iigho"]
+tile_size = Vector2i(8, 8)
+sources/0 = SubResource("TileSetAtlasSource_7ahhq")
+sources/1 = SubResource("TileSetAtlasSource_u708n")
 
 [node name="death_screen" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD4//z/AAAEAAEAAFD5//v/AAAEAAEAADD6//v/AAAEAAEAADD7//v/AAAEAAEAADD8//v/AAAEAAEAADD9//v/AAAEAAEAADD+//v/AAAEAAEAADD///v/AAAEAAEAADAAAPv/AAAEAAEAADABAPv/AAAEAAEAADACAPv/AAAEAAEAADADAPv/AAAEAAEAADAEAPv/AAAEAAEAADAFAPv/AAAEAAEAADAGAPv/AAAEAAEAADAGAAQAAAAEAAEAAAAEAAQAAAAEAAEAAAAFAAQAAAAEAAEAAAADAAQAAAAEAAEAAAACAAQAAAAEAAEAAAABAAQAAAAEAAEAAAAAAAQAAAAEAAEAAAD//wQAAAAEAAEAAAD+/wQAAAAEAAEAAAD9/wQAAAAEAAEAAAD8/wQAAAAEAAEAAAD7/wQAAAAEAAEAAAD6/wQAAAAEAAEAAAD4/wMAAAAEAAEAAFD5/wMAAQAAAAwAAAD6/wMAAQAAAAwAABD7/wMAAQAAAAwAABD8/wMAAQAAAAwAAAD9/wMAAQAAAAwAAAD+/wMAAQAAAAwAABD//wMAAQAAAAwAABAAAAMAAQAAAAwAABABAAMAAQAAAAwAABACAAMAAQAAAAwAAAADAAMAAQAAAAwAABAEAAMAAQAAAAwAABAFAAMAAQAAAAwAAAAGAAMAAQAAAAwAABAHAAIAAAAEAAEAAGAGAAIAAAADAAAAAAAFAAIAAAADAAAAAAAEAAIAAAADAAAAAAADAAIAAQAAAAYAAAACAAIAAQAAAAgAAAAAAAIAAAABAAAAAAD//wIAAAADAAAAAAD+/wIAAQAAAAYAAAD9/wIAAQAAAAgAAAD8/wIAAQAAAAYAABD7/wIAAAADAAAAAAD6/wIAAAAGAAAAAAD5/wIAAAADAAAAAAD4/wIAAAAEAAEAAFD4/wEAAAAEAAEAAFD5/wEAAAADAAAAAAD6/wEAAAADAAAAAAD7/wEAAAADAAAAAAD8/wEAAAADAAAAAAD9/wEAAAAEAAgAAAD+/wEAAAADAAAAAAD//wEAAAADAAAAAAAAAAEAAAADAAAAAAABAAEAAAADAAAAAAACAAEAAAAEAAgAAAADAAEAAAADAAAAAAAEAAEAAAAEAAAAAAAFAAEAAAADAAAAAAAGAAEAAAADAAAAAAAHAAEAAAAEAAEAAGAHAAAAAAAEAAEAAGAGAAAAAAACAAAAAAAFAAAAAAADAAAAAAAEAAAAAAADAAAAAAADAAAAAAAGAAAAAAACAAAAAAAEAAgAAAABAAAAAAADAAAAAAAAAAAAAAADAAAAAAD//wAAAAADAAAAAAD+/wAAAAADAAAAAAD9/wAAAAAEAAgAAAD8/wAAAAADAAAAAAD7/wAAAAADAAAAAAD6/wAAAAAFAAAAAAD5/wAAAAADAAAAAAD4/wAAAAAEAAEAAFD5////AAAEAAAAAAD7////AAADAAAAAAD8////AAABAAAAAAD9////AAAEAAgAAAD+////AAAEAAAAAAD/////AAADAAAAAAAAAP//AAAFAAAAAAABAP//AAADAAAAAAACAP//AAAEAAgAAAADAP//AAAEAAAAAAAEAP//AAAGAAAAAAAFAP//AAADAAAAAAAGAP//AAADAAAAAAAHAP//AAAEAAEAAGAHAP7/AAAEAAEAAGAGAP7/AAADAAAAAAAFAP7/AAAGAAAAAAAEAP7/AAADAAAAAAADAP7/AAADAAAAAAACAP7/AAAEAAgAAAABAP7/AAADAAAAAAAAAP7/AAADAAAAAAD///7/AAABAAAAAAD+//7/AAADAAAAAAD9//7/AAAEAAgAAAD8//7/AAADAAAAAAD7//7/AAADAAAAAAD6//7/AAAGAAAAAAD5//7/AAAFAAAAAAD4////AAAEAAEAAFD4//7/AAAEAAEAAFD4//3/AAAEAAEAAFD5//3/AAADAAAAAAD6//3/AAABAAAAAAD7//3/AAADAAAAAAD8//3/AAADAAAAAAD9//3/AAAEAAgAAAD+//3/AAADAAAAAAD///3/AAADAAAAAAAAAP3/AAADAAAAAAABAP3/AAADAAAAAAACAP3/AAAEAAgAAAADAP3/AAADAAAAAAAEAP3/AAABAAAAAAAFAP3/AAADAAAAAAAGAP3/AAADAAAAAAAHAP3/AAAEAAEAAGAHAPz/AAAEAAEAAGAGAPz/AAABAAAAAAAFAPz/AAADAAAAAAAEAPz/AAADAAAAAAADAPz/AAAGAAAAAAACAPz/AQAAAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAABAAAAAAD9//z/AQAAAAAAAAD8//z/AAAEAAAAAAD7//z/AAAGAAAAAAD6//z/AAADAAAAAAD5//z/AAACAAAAAAAHAAMAAAAEAAEAAGAHAAQAAAAFAAEAAAD4/wQAAAAFAAEAABD4//v/AAAFAAEAAHAHAPv/AAAFAAEAACD5/wQAAAAEAAEAAAD6////AAACAAAAAAABAAIAAQAAAAYAABA=")
+tile_set = SubResource("TileSet_iigho")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(9, 9)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -35.0
-offset_top = -34.0
-offset_right = 35.0
-offset_bottom = -11.0
+offset_left = -34.0
+offset_top = -32.0
+offset_right = 34.0
+offset_bottom = -10.0
 text = "You died"
 scroll_active = false
 
-[node name="Button" type="Button" parent="."]
-offset_left = 12.0
+[node name="RestartButton" type="Button" parent="."]
+offset_left = -26.0
 offset_top = 2.0
-offset_right = 116.0
+offset_right = 78.0
+offset_bottom = 42.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("3_s44ck")
+flat = true
+script = ExtResource("4_nus4h")
+
+[node name="MenuButton" type="Button" parent="."]
+offset_left = -66.0
+offset_top = 2.0
+offset_right = 38.0
+offset_bottom = 42.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("5_b1ui3")
+flat = true
+script = ExtResource("6_7ahhq")
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 2.0
+offset_right = 118.0
 offset_bottom = 42.0
 scale = Vector2(0.5, 0.5)
 icon = ExtResource("1_if853")
 flat = true
+script = ExtResource("2_f562y")
+
+[connection signal="pressed" from="RestartButton" to="RestartButton" method="_on_pressed"]
+[connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]
+[connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed"]

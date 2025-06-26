@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://0ov0rniwprpu"]
+
+[ext_resource type="Texture2D" uid="uid://4tbxkcdsuvvl" path="res://Sprites/Cave Tileset/Checkpoint.png" id="1_luqgl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luqgl"]
+atlas = ExtResource("1_luqgl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6hke"]
+atlas = ExtResource("1_luqgl")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnhlw"]
+atlas = ExtResource("1_luqgl")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s20m7"]
+atlas = ExtResource("1_luqgl")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q25r3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luqgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6hke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnhlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s20m7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q25r3")
+autoplay = "default"

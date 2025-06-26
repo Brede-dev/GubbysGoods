@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 enum State { IDLE, RUNNING, JUMPING, FALLING, DASHING, SLIDING, CROUCHING }
 
 @export var input_left: String = "left"
@@ -205,8 +206,12 @@ func _on_area_2d_area_entered(body: Area2D) -> void:
 	if body.name == "NormalCollision":
 		get_tree().change_scene_to_file("res://win_screen.tscn")
 
+var checkpoint = Vector2(3179, -344)
+var Player
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Kill"):
+	if area.is_in_group("Kill") and $".".position.x > 3120:
+		$".".position = $"../Flags"
 		$DeathSound.play()
+	else:
 		get_tree().change_scene_to_file("res://death_screen.tscn")

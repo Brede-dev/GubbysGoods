@@ -19,6 +19,10 @@ config/icon="uid://qq84q64wow64"
 
 BgMusic="*res://BGMusic.tscn"
 
+[global_group]
+
+player=""
+
 [input]
 
 left={

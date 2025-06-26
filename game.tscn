@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://bepblmjfo4y86"]
+[gd_scene load_steps=16 format=4 uid="uid://bepblmjfo4y86"]
 
 [ext_resource type="Texture2D" uid="uid://5xe2ardasubl" path="res://Sprites/Cave Tileset/liquids animations (1).png" id="1_eow3j"]
 [ext_resource type="Texture2D" uid="uid://wktqdfgm0v8j" path="res://Sprites/Gubby.png" id="3_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://y4vjepug1yfk" path="res://player.tscn" id="4_eow3j"]
 [ext_resource type="Texture2D" uid="uid://4bu7857v4j3a" path="res://Sprites/Cave Tileset/cavesofgallet_tiles.png" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://0ov0rniwprpu" path="res://checkpoint.tscn" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://dqdlnhw4df3bj" path="res://delivery_area.tscn" id="7_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://qq84q64wow64" path="res://Sprites/Player/Gubby (1)-1.png.png" id="12_iotsf"]
 
@@ -245,6 +246,10 @@ tile_set = SubResource("TileSet_215e1")
 
 [node name="Player" parent="." instance=ExtResource("4_eow3j")]
 position = Vector2(1, -38)
+
+[node name="Flags" parent="." instance=ExtResource("7_eow3j")]
+position = Vector2(3179, -344)
+scale = Vector2(2, 2)
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
 offset_left = 709.0

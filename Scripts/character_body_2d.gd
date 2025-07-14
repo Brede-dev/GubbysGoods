@@ -211,7 +211,7 @@ var Player
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Kill") and $".".position.x > 3120:
-		$".".position = $"../Flags"
+		$".".position = $"../Flags".position  # Add .position to get the Vector2
 		$DeathSound.play()
 	else:
 		get_tree().change_scene_to_file("res://death_screen.tscn")

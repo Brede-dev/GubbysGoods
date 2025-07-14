@@ -244,7 +244,7 @@ stream = ExtResource("8_dw050")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="." groups=["player"]]
 stream = ExtResource("9_b26j0")
-volume_db = -4.685
+volume_db = -4.371
 
 [connection signal="pressed" from="Camera2D/Menu Button" to="Camera2D/Menu Button" method="_on_pressed"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

@@ -197,9 +197,9 @@ func end_crouch():
 		crouch_collision.disabled = true
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		get_tree().reload_current_scene()
+#func _on_area_2d_body_entered(body: Node2D) -> void:
+#	if body.name == "Player":
+#		get_tree().reload_current_scene()
 
 
 func _on_area_2d_area_entered(body: Area2D) -> void:
@@ -213,5 +213,7 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Kill") and $".".position.x > 3120:
 		$".".position = $"../Flags".position  # Add .position to get the Vector2
 		$DeathSound.play()
+	elif area.is_in_group("win"):
+		get_tree().change_scene_to_file("res://win_screen.tscn")
 	else:
 		get_tree().change_scene_to_file("res://death_screen.tscn")

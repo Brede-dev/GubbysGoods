@@ -476,5 +476,23 @@ text = "You made it to gubby!
 Walk up to him to give him the pizza."
 scroll_active = false
 
-[node name="DeliveryArea" parent="." instance=ExtResource("7_j5wjh")]
+[node name="DeliveryArea" parent="." groups=["win"] instance=ExtResource("7_j5wjh")]
 position = Vector2(3463, 244)
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="."]
+offset_left = 3147.0
+offset_top = -377.0
+offset_right = 3241.0
+offset_bottom = -349.0
+scale = Vector2(0.75, 0.75)
+text = "Checkpoint"
+scroll_active = false
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="."]
+offset_left = 2546.0
+offset_top = 185.0
+offset_right = 2770.0
+offset_bottom = 241.0
+scale = Vector2(0.75, 0.75)
+text = "Using everything you have learnt, Deliver the pizza!"
+scroll_active = false

@@ -251,7 +251,7 @@ position = Vector2(-5, -36)
 position = Vector2(3179, -344)
 scale = Vector2(2, 2)
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+[node name="RichTextLabel5" type="RichTextLabel" parent="." groups=["text"]]
 offset_left = 709.0
 offset_top = -325.0
 offset_right = 907.0
@@ -260,7 +260,7 @@ scale = Vector2(0.5, 0.5)
 text = "You only die if you touch 
 the bottom of the water"
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+[node name="RichTextLabel4" type="RichTextLabel" parent="." groups=["text"]]
 offset_left = 996.0
 offset_top = -367.0
 offset_right = 1298.0
@@ -268,7 +268,7 @@ offset_bottom = -287.0
 scale = Vector2(0.5, 0.5)
 text = "If you havent jumped off of an object you can still jump will in the air, you also keep your double jump"
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+[node name="RichTextLabel3" type="RichTextLabel" parent="." groups=["text"]]
 offset_left = -21.0
 offset_top = 5.0
 offset_right = 223.0
@@ -277,7 +277,7 @@ scale = Vector2(0.75, 0.75)
 text = "Press W to perform a jump you can jump twice to double jump"
 scroll_active = false
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="RichTextLabel2" type="RichTextLabel" parent="." groups=["text"]]
 offset_left = -18.0
 offset_top = -133.0
 offset_right = 215.0
@@ -286,7 +286,7 @@ scale = Vector2(0.75, 0.75)
 text = "A and D to move left and right"
 scroll_active = false
 
-[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+[node name="RichTextLabel6" type="RichTextLabel" parent="." groups=["text"]]
 offset_left = 2374.0
 offset_top = -130.0
 offset_right = 2556.0
@@ -459,14 +459,14 @@ rotation = -1.83992e-05
 scale = Vector2(0.695812, 0.376222)
 texture = ExtResource("12_iotsf")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." groups=["text"]]
 offset_left = 1743.0
 offset_top = -213.0
 offset_right = 1938.0
 offset_bottom = -146.0
 text = "1 block tall water does not kill you"
 
-[node name="RichTextLabel7" type="RichTextLabel" parent="."]
+[node name="RichTextLabel7" type="RichTextLabel" parent="." groups=["text"]]
 offset_left = 3167.0
 offset_top = 87.0
 offset_right = 3343.0
@@ -479,7 +479,7 @@ scroll_active = false
 [node name="DeliveryArea" parent="." groups=["win"] instance=ExtResource("7_j5wjh")]
 position = Vector2(3463, 244)
 
-[node name="RichTextLabel8" type="RichTextLabel" parent="."]
+[node name="RichTextLabel8" type="RichTextLabel" parent="." groups=["text"]]
 offset_left = 3147.0
 offset_top = -377.0
 offset_right = 3241.0
@@ -488,7 +488,7 @@ scale = Vector2(0.75, 0.75)
 text = "Checkpoint"
 scroll_active = false
 
-[node name="RichTextLabel9" type="RichTextLabel" parent="."]
+[node name="RichTextLabel9" type="RichTextLabel" parent="." groups=["text"]]
 offset_left = 2546.0
 offset_top = 185.0
 offset_right = 2770.0

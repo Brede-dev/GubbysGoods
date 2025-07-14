@@ -22,6 +22,7 @@ BgMusic="*res://BGMusic.tscn"
 [global_group]
 
 player=""
+text=""
 
 [input]
 

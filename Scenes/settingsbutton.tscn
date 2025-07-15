@@ -43,12 +43,4 @@ offset_bottom = 334.0
 scale = Vector2(3, 3)
 text = "Increase Text Size"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." groups=["text"]]
-layout_mode = 0
-offset_left = 649.0
-offset_top = 157.0
-offset_right = 689.0
-offset_bottom = 197.0
-text = "test"
-
 [connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]

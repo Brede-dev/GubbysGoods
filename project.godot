@@ -17,7 +17,8 @@ config/icon="uid://qq84q64wow64"
 
 [autoload]
 
-BgMusic="*res://BGMusic.tscn"
+BGMusic="*res://BGMusic.tscn"
+GlobalSettings="*res://GlobalSettings.gd"
 
 [global_group]
 

@@ -236,7 +236,7 @@ target_position = Vector2(0, -16)
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, 6)
+scale = Vector2(1, 1.5)
 shape = SubResource("CircleShape2D_1jxqw")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]

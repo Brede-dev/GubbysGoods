@@ -8,6 +8,7 @@ enum State { IDLE, RUNNING, JUMPING, FALLING, DASHING, SLIDING, CROUCHING }
 @export var input_jump: String = "jump"
 @export var input_dash: String = "dash"
 @export var input_crouch: String = "crouch"
+@export var input_squeak: String = "squeak"
 
 @export var speed: float = 200.0
 @export var jump_velocity: float = -400.0
@@ -217,3 +218,7 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		get_tree().change_scene_to_file("res://win_screen.tscn")
 	else:
 		get_tree().change_scene_to_file("res://death_screen.tscn")
+
+
+	if Input.is_action_just_pressed(input_squeak):
+		$JumpSound.play()

@@ -207,11 +207,11 @@ func _on_area_2d_area_entered(body: Area2D) -> void:
 	if body.name == "NormalCollision":
 		get_tree().change_scene_to_file("res://win_screen.tscn")
 
-var checkpoint = Vector2(3179, -344)
+var checkpoint = Vector2(2600, 251)
 var Player
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Kill") and $".".position.x > 3120:
+	if area.is_in_group("Kill") and $".".position.x > 2600:
 		$".".position = $"../Flags".position  # Add .position to get the Vector2
 		$DeathSound.play()
 	elif area.is_in_group("win"):

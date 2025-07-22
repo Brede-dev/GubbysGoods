@@ -259,7 +259,7 @@ tile_set = SubResource("TileSet_215e1")
 position = Vector2(-5, -36)
 
 [node name="Flags" parent="." instance=ExtResource("7_eow3j")]
-position = Vector2(3179, -344)
+position = Vector2(2600, 249)
 scale = Vector2(2, 2)
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="." groups=["text"]]
@@ -1180,19 +1180,19 @@ scroll_active = false
 position = Vector2(3463, 244)
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="." groups=["text"]]
-offset_left = 3147.0
-offset_top = -377.0
-offset_right = 3241.0
-offset_bottom = -349.0
+offset_left = 2555.0
+offset_top = 276.0
+offset_right = 2649.0
+offset_bottom = 304.0
 scale = Vector2(0.75, 0.75)
 text = "Checkpoint"
 scroll_active = false
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="." groups=["text"]]
-offset_left = 2546.0
-offset_top = 185.0
-offset_right = 2770.0
-offset_bottom = 241.0
+offset_left = 2670.0
+offset_top = 5.0
+offset_right = 2894.0
+offset_bottom = 61.0
 scale = Vector2(0.75, 0.75)
 text = "Using everything you have learnt, Deliver the pizza!"
 scroll_active = false

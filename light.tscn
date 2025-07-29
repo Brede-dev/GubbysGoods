@@ -13,6 +13,6 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 0.627451, 0, 1)
-energy = 1.3
+energy = 1.5
 texture = SubResource("GradientTexture2D_hdgcg")
 texture_scale = 3.0

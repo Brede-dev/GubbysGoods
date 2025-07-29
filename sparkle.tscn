@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwlxx7eurkoo5"]
+
+[ext_resource type="Texture2D" uid="uid://cnxjhr8b227jf" path="res://Sprites/sparkle.png" id="1_5kv8c"]
+[ext_resource type="Script" uid="uid://beypynbldmsad" path="res://sparkle.gd" id="2_n0334"]
+[ext_resource type="Script" uid="uid://bej0cctsij4vy" path="res://sparkle_glow.gd" id="3_ioif8"]
+
+[sub_resource type="Gradient" id="Gradient_n0334"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ioif8"]
+gradient = SubResource("Gradient_n0334")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.995413, 0.96789)
+metadata/_snap_count = 2
+
+[node name="sparkle" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_5kv8c")
+script = ExtResource("2_n0334")
+fade_in_duration = 0.37
+spin_up_duration = 0.3
+max_spin_speed = 825.0
+spin_down_duration = 0.3
+fade_out_duration = 0.37
+pause_between_cycles = 1.5
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+rotation = 0.785398
+scale = Vector2(0.15, 0.15)
+energy = 1.5
+texture = SubResource("GradientTexture2D_ioif8")
+script = ExtResource("3_ioif8")
+fade_in_duration = 0.37
+spin_up_duration = 4.0
+max_spin_speed = 125.0
+spin_down_duration = 4.0
+fade_out_duration = 0.37
+pause_between_cycles = 1.5

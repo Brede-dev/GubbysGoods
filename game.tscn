@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bepblmjfo4y86"]
+[gd_scene load_steps=24 format=4 uid="uid://bepblmjfo4y86"]
 
 [ext_resource type="Texture2D" uid="uid://5xe2ardasubl" path="res://Sprites/Cave Tileset/liquids animations (1).png" id="1_eow3j"]
 [ext_resource type="Script" uid="uid://brtdi804oeur1" path="res://text handler.gd" id="1_j5wjh"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://0ov0rniwprpu" path="res://checkpoint.tscn" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://dqdlnhw4df3bj" path="res://delivery_area.tscn" id="7_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://cgh6uby0d7ju" path="res://light.tscn" id="10_hve3p"]
+[ext_resource type="PackedScene" uid="uid://18iy68x8ky2h" path="res://fire.tscn" id="12_215e1"]
 [ext_resource type="Texture2D" uid="uid://qq84q64wow64" path="res://Sprites/Player/Gubby (1)-1.png.png" id="12_iotsf"]
 [ext_resource type="PackedScene" uid="uid://dwlxx7eurkoo5" path="res://sparkle.tscn" id="12_lc2xo"]
 
@@ -553,6 +554,87 @@ scale = Vector2(8, 2)
 position = Vector2(3135, 304)
 scale = Vector2(4, 1)
 
+[node name="Node2D85" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(2924, 174)
+
+[node name="Node2D86" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(4645, -268)
+
+[node name="Node2D87" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(4646, -108)
+
+[node name="Node2D88" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(4646, 51)
+
+[node name="Node2D89" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(4567, 193)
+
+[node name="Node2D90" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(4426, 151)
+
+[node name="Node2D91" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(4664, 192)
+
+[node name="Node2D92" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(4227, 192)
+
+[node name="Node2D93" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(4025, 113)
+
+[node name="Node2D94" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3703, 194)
+
+[node name="Node2D95" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3866, 109)
+
+[node name="Node2D96" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3428, 209)
+
+[node name="Node2D97" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3565, 231)
+
+[node name="Node2D98" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3464, 352)
+
+[node name="Node2D99" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3565, 353)
+
+[node name="Node2D100" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(2926, 451)
+
+[node name="Node2D101" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3004, 451)
+
+[node name="Node2D102" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3084, 451)
+
+[node name="Node2D103" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3165, 453)
+
+[node name="Node2D104" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3244, 453)
+
+[node name="Node2D105" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3326, 452)
+
+[node name="Node2D106" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3406, 453)
+
+[node name="Node2D107" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(2846, 452)
+
+[node name="Node2D108" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(2784, 351)
+
+[node name="Node2D109" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3326, 213)
+
+[node name="Node2D110" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3045, 192)
+
+[node name="Node2D111" parent="Lights" instance=ExtResource("12_215e1")]
+position = Vector2(3166, 173)
+
 [node name="Player" parent="." instance=ExtResource("4_eow3j")]
 position = Vector2(0, -40)
 
@@ -563,20 +645,20 @@ scale = Vector2(2, 2)
 [node name="Text" type="Node2D" parent="."]
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="Text" groups=["text"]]
-offset_left = 709.0
-offset_top = -325.0
-offset_right = 907.0
-offset_bottom = -271.0
+offset_left = 690.0
+offset_top = -327.0
+offset_right = 888.0
+offset_bottom = -273.0
 scale = Vector2(0.5, 0.5)
 text = "You only die if you touch 
 the bottom of the water"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="Text" groups=["text"]]
-offset_left = 954.0
-offset_top = -380.0
-offset_right = 1256.0
-offset_bottom = -300.0
-scale = Vector2(0.5, 0.5)
+offset_left = 965.0
+offset_top = -376.0
+offset_right = 1245.0
+offset_bottom = -278.0
+scale = Vector2(0.35, 0.35)
 text = "If you havent jumped off of an object you can still jump will in the air, you also keep your double jump"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Text" groups=["text"]]
@@ -607,10 +689,11 @@ text = "You die instantly upon
      contact with lava"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Text" groups=["text"]]
-offset_left = 1743.0
-offset_top = -213.0
-offset_right = 1938.0
-offset_bottom = -146.0
+offset_left = 1760.0
+offset_top = -203.0
+offset_right = 1955.0
+offset_bottom = -136.0
+scale = Vector2(0.5, 0.5)
 text = "1 block tall water does not kill you"
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="Text" groups=["text"]]
@@ -633,11 +716,11 @@ text = "Checkpoint"
 scroll_active = false
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="Text" groups=["text"]]
-offset_left = 2670.0
-offset_top = 5.0
-offset_right = 2894.0
-offset_bottom = 61.0
-scale = Vector2(0.75, 0.75)
+offset_left = 2661.0
+offset_top = 3.0
+offset_right = 2903.0
+offset_bottom = 63.0
+scale = Vector2(0.5, 0.5)
 text = "Using everything you have learnt, Deliver the pizza!"
 scroll_active = false
 
@@ -1666,3 +1749,152 @@ position = Vector2(347, -80)
 
 [node name="sparkle53" parent="Sparkles" instance=ExtResource("12_lc2xo")]
 position = Vector2(387, -80)
+
+[node name="Fire" type="Node2D" parent="."]
+
+[node name="Node2D" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(44, -49)
+
+[node name="Node2D2" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(145, -47)
+
+[node name="Node2D3" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(305, -47)
+
+[node name="Node2D4" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(426, -46)
+
+[node name="Node2D5" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(566, -126)
+
+[node name="Node2D6" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(626, -247)
+
+[node name="Node2D7" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(726, -247)
+
+[node name="Node2D8" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(805, -246)
+
+[node name="Node2D9" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(905, -246)
+
+[node name="Node2D10" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(987, -326)
+
+[node name="Node2D11" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1165, -366)
+
+[node name="Node2D12" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1385, -427)
+
+[node name="Node2D13" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1525, -486)
+
+[node name="Node2D14" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1625, -527)
+
+[node name="Node2D15" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1686, -526)
+
+[node name="Node2D16" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1784, -388)
+
+[node name="Node2D17" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1745, -266)
+
+[node name="Node2D18" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1786, -147)
+
+[node name="Node2D19" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1846, -147)
+
+[node name="Node2D20" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1926, -164)
+
+[node name="Node2D21" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(1986, -167)
+
+[node name="Node2D22" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2125, -168)
+
+[node name="Node2D23" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2207, -166)
+
+[node name="Node2D24" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2346, -147)
+
+[node name="Node2D25" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2504, -167)
+
+[node name="Node2D26" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2565, -108)
+
+[node name="Node2D27" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2566, -6)
+
+[node name="Node2D28" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2564, 92)
+
+[node name="Node2D29" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2625, 213)
+
+[node name="Node2D30" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2684, 174)
+
+[node name="Node2D31" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2786, 214)
+
+[node name="Node2D32" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2805, 54)
+
+[node name="Node2D33" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2925, 171)
+
+[node name="Node2D34" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2866, -24)
+
+[node name="Node2D35" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2866, -107)
+
+[node name="Node2D36" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(2984, -107)
+
+[node name="Node2D37" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(3106, -147)
+
+[node name="Node2D38" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(3104, -247)
+
+[node name="Node2D39" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(3166, -347)
+
+[node name="Node2D40" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(3267, -327)
+
+[node name="Node2D41" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(3404, -367)
+
+[node name="Node2D42" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(3584, -408)
+
+[node name="Node2D43" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(3765, -467)
+
+[node name="Node2D44" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(3945, -528)
+
+[node name="Node2D45" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(4125, -588)
+
+[node name="Node2D46" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(4305, -487)
+
+[node name="Node2D47" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(4466, -406)
+
+[node name="Node2D48" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(4547, -408)
+
+[node name="Node2D49" parent="Fire" instance=ExtResource("12_215e1")]
+position = Vector2(4645, -409)

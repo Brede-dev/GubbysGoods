@@ -218,7 +218,3 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		get_tree().change_scene_to_file("res://win_screen.tscn")
 	else:
 		get_tree().change_scene_to_file("res://death_screen.tscn")
-
-
-	if Input.is_action_just_pressed(input_squeak):
-		$JumpSound.play()

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://3obl4eh1304s" path="res://Sprites/Player/pizza.png" id="5_nvl01"]
 [ext_resource type="Texture2D" uid="uid://d4lvnyv1lvqfx" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Menu/B_Menu1.png" id="6_ivps1"]
 [ext_resource type="Script" uid="uid://b8bw2eqfcg1qc" path="res://menu_button.gd" id="7_urp6f"]
-[ext_resource type="AudioStream" uid="uid://dp30bl6d7nwoh" path="res://Sounds/Gubby Sound Effect.mp3" id="8_dw050"]
+[ext_resource type="AudioStream" uid="uid://dbywjsmuipkqh" path="res://Sounds/lift.wav" id="8_b26j0"]
 [ext_resource type="AudioStream" uid="uid://b723abcxn6kr8" path="res://Sounds/hit01.wav" id="9_b26j0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7jktm"]
@@ -249,7 +249,7 @@ scale = Vector2(1, 1.5)
 shape = SubResource("CircleShape2D_1jxqw")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_dw050")
+stream = ExtResource("8_b26j0")
 volume_db = -5.982
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="." groups=["player"]]

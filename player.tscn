@@ -220,24 +220,10 @@ position = Vector2(18, 1)
 sprite_frames = SubResource("SpriteFrames_e36ub")
 autoplay = "default"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="AnimatedSprite2D"]
-offset_left = -280.0
-offset_top = -153.0
-offset_right = -7.0
-offset_bottom = -124.0
-text = "Objective: Deliver pizza to Gubby"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
-
-[node name="Menu Button" type="Button" parent="Camera2D"]
-offset_left = 196.0
-offset_top = -162.0
-offset_right = 300.0
-offset_bottom = -122.0
-icon = ExtResource("6_ivps1")
-flat = true
-script = ExtResource("7_urp6f")
+position_smoothing_enabled = true
+position_smoothing_speed = 11.2
 
 [node name="HeadRayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, -16)
@@ -261,5 +247,21 @@ color = Color(1, 0.796987, 0.579379, 1)
 texture = SubResource("GradientTexture2D_n7ghd")
 texture_scale = 5.0
 
-[connection signal="pressed" from="Camera2D/Menu Button" to="Camera2D/Menu Button" method="_on_pressed"]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -280.0
+offset_top = -153.0
+offset_right = -7.0
+offset_bottom = -124.0
+text = "Objective: Deliver pizza to Gubby"
+
+[node name="Menu Button" type="Button" parent="."]
+offset_left = 196.0
+offset_top = -162.0
+offset_right = 300.0
+offset_bottom = -122.0
+icon = ExtResource("6_ivps1")
+flat = true
+script = ExtResource("7_urp6f")
+
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="pressed" from="Menu Button" to="Menu Button" method="_on_pressed"]

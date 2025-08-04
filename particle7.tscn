@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgmbnoxibbr3g"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dtnyd"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 41.108
+initial_velocity_min = 8.9
+initial_velocity_max = 30.91
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
+gravity = Vector3(0, 50, 0)
+scale_min = 0.2
+scale_max = 5.01
+color = Color(0.650129, 0.650128, 0.650128, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+amount = 5
+lifetime = 1.5
+randomness = 0.22
+trail_lifetime = 2.74
+process_material = SubResource("ParticleProcessMaterial_dtnyd")

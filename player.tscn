@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://y4vjepug1yfk"]
+[gd_scene load_steps=36 format=3 uid="uid://y4vjepug1yfk"]
 
 [ext_resource type="Script" uid="uid://dfirfs3haff65" path="res://Scripts/character_body_2d.gd" id="1_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://bko53pbiblu7y" path="res://Sprites/Player/Elliot (5).png" id="2_dw050"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b8bw2eqfcg1qc" path="res://menu_button.gd" id="7_urp6f"]
 [ext_resource type="AudioStream" uid="uid://dbywjsmuipkqh" path="res://Sounds/lift.wav" id="8_b26j0"]
 [ext_resource type="AudioStream" uid="uid://b723abcxn6kr8" path="res://Sounds/hit01.wav" id="9_b26j0"]
+[ext_resource type="PackedScene" uid="uid://dgmbnoxibbr3g" path="res://particle7.tscn" id="10_n7ghd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7jktm"]
 radius = 8.0
@@ -262,6 +263,9 @@ offset_bottom = -122.0
 icon = ExtResource("6_ivps1")
 flat = true
 script = ExtResource("7_urp6f")
+
+[node name="Node2D" parent="." instance=ExtResource("10_n7ghd")]
+position = Vector2(0, 15)
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="pressed" from="Menu Button" to="Menu Button" method="_on_pressed"]

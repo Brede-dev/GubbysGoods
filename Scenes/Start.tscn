@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b2i1bfpa2vlrv"]
 
 [ext_resource type="Script" uid="uid://cuqgnnjf2oqcn" path="res://Scripts/Play Button.gd" id="1_og4jd"]
-[ext_resource type="Texture2D" uid="uid://ckknedfa0bor5" path="res://Sprites/UI Buttons/Buttons Customization/text-1748390942834 (1).png" id="2_y4ycm"]
+[ext_resource type="Texture2D" uid="uid://btifm1a1ln3un" path="res://Sprites/text-1748390942834 (1)-1.png (1).png" id="2_7aetl"]
 [ext_resource type="Texture2D" uid="uid://b3owxarkhb3bq" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Play/B_Play1.png" id="3_035le"]
 [ext_resource type="Texture2D" uid="uid://cx0kajda0ygl2" path="res://Sprites/Cave Tileset/cavesofgallet.png" id="4_1lxxj"]
 [ext_resource type="Texture2D" uid="uid://pd1qewngshmk" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Settings/B_Settings1.png" id="5_7aetl"]
@@ -15,6 +15,10 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.67
+blend_mode = 1
+
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(578, 579)
 scale = Vector2(2.25586, 2.24609)
@@ -25,7 +29,7 @@ texture = ExtResource("4_1lxxj")
 [node name="Title" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(584, 141)
 scale = Vector2(1.56673, 1.34231)
-texture = ExtResource("2_y4ycm")
+texture = ExtResource("2_7aetl")
 
 [node name="Play Button" type="Button" parent="CanvasLayer"]
 offset_left = 384.0

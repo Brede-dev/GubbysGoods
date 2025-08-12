@@ -1,9 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b880jmp6fm4jg"]
 
-[ext_resource type="AudioStream" uid="uid://mwd4pniii5t7" path="res://Sounds/ambience (mp3cut.net).mp3" id="1_8w7t4"]
+[ext_resource type="AudioStream" uid="uid://btd55ppacmsmh" path="res://Sounds/CaveLoop.wav" id="1_8w7t4"]
 
 [node name="BGMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_8w7t4")
-volume_db = -15.928
+volume_db = -3.0
 autoplay = true
-parameters/looping = true

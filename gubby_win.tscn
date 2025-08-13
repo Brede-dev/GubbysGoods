@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bouoxdjcgya1t"]
+
+[ext_resource type="Texture2D" uid="uid://qq84q64wow64" path="res://Sprites/Player/Gubby (1)-1.png.png" id="1_8704r"]
+
+[sub_resource type="TileSet" id="TileSet_qrvef"]
+
+[node name="gubby_win" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_qrvef")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(506, 298)
+texture = ExtResource("1_8704r")

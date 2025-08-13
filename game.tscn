@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bepblmjfo4y86"]
+[gd_scene load_steps=34 format=4 uid="uid://bepblmjfo4y86"]
 
 [ext_resource type="Texture2D" uid="uid://5xe2ardasubl" path="res://Sprites/Cave Tileset/liquids animations (1).png" id="1_eow3j"]
 [ext_resource type="Script" uid="uid://brtdi804oeur1" path="res://text handler.gd" id="1_j5wjh"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dwlxx7eurkoo5" path="res://sparkle.tscn" id="12_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://bnespklg8fmdr" path="res://lava_particles.tscn" id="13_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://btk0pnlj1vppl" path="res://void_mass_glow.tscn" id="15_7sc4i"]
+[ext_resource type="Script" uid="uid://dr6h3nhdmf5yv" path="res://gubby_button.gd" id="17_e8heu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfdv2"]
 texture = ExtResource("5_7jktm")
@@ -364,6 +365,18 @@ size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hve3p"]
 size = Vector2(12, 12)
+
+[sub_resource type="Gradient" id="Gradient_e8heu"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rvswv"]
+gradient = SubResource("Gradient_e8heu")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.857798, 0.146789)
+metadata/_snap_count = 2
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_j5wjh")
@@ -724,6 +737,12 @@ position = Vector2(3166, 173)
 [node name="Player" parent="." instance=ExtResource("4_eow3j")]
 position = Vector2(0, -40)
 
+[node name="gubgub2" type="Sprite2D" parent="Player"]
+visible = false
+position = Vector2(0, -1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("12_iotsf")
+
 [node name="Flags" parent="." instance=ExtResource("7_eow3j")]
 position = Vector2(2600, 249)
 scale = Vector2(2, 2)
@@ -799,6 +818,16 @@ offset_right = 2649.0
 offset_bottom = 304.0
 scale = Vector2(0.75, 0.75)
 text = "Checkpoint"
+scroll_active = false
+
+[node name="RichTextLabel10" type="RichTextLabel" parent="Text"]
+offset_left = -266.125
+offset_top = -83.9063
+offset_right = -30.125
+offset_bottom = -50.9063
+scale = Vector2(0.25, 0.25)
+text = "Definitely not a secret button"
+fit_content = true
 scroll_active = false
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="Text" groups=["text"]]
@@ -2101,3 +2130,21 @@ position = Vector2(4552, -41)
 
 [node name="Void Mass23" parent="Void Mass Glow" instance=ExtResource("15_7sc4i")]
 position = Vector2(4614, 293)
+
+[node name="Gubby Button" type="Button" parent="." node_paths=PackedStringArray("gubgub_sprite")]
+offset_left = -280.0
+offset_top = -89.0
+offset_right = 68.0
+offset_bottom = 259.0
+scale = Vector2(0.25, 0.25)
+icon = ExtResource("12_iotsf")
+flat = true
+script = ExtResource("17_e8heu")
+gubgub_sprite = NodePath("../Player/gubgub2")
+
+[node name="PointLight2D" type="PointLight2D" parent="Gubby Button"]
+position = Vector2(180, 152)
+scale = Vector2(9.8125, 9.625)
+texture = SubResource("GradientTexture2D_rvswv")
+
+[connection signal="pressed" from="Gubby Button" to="Gubby Button" method="_on_pressed"]

@@ -180,6 +180,13 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nvl01"]
+particle_flag_disable_z = true
+gravity = Vector3(0, -58.495, 0)
+turbulence_enabled = true
+turbulence_noise_strength = 14.6
+turbulence_noise_scale = 4.555
+
 [sub_resource type="Gradient" id="Gradient_b26j0"]
 offsets = PackedFloat32Array(0, 0.363636, 0.753247)
 colors = PackedColorArray(1, 1, 1, 1, 0.400698, 0.400698, 0.400698, 1, 0, 0, 0, 1)
@@ -188,13 +195,6 @@ colors = PackedColorArray(1, 1, 1, 1, 0.400698, 0.400698, 0.400698, 1, 0, 0, 0, 
 gradient = SubResource("Gradient_b26j0")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nvl01"]
-particle_flag_disable_z = true
-gravity = Vector3(0, -58.495, 0)
-turbulence_enabled = true
-turbulence_noise_strength = 14.6
-turbulence_noise_scale = 4.555
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_1jxqw")
@@ -238,11 +238,6 @@ volume_db = -5.982
 stream = ExtResource("9_b26j0")
 volume_db = -4.371
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(1, 0.796987, 0.579379, 1)
-texture = SubResource("GradientTexture2D_n7ghd")
-texture_scale = 5.0
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = -280.0
 offset_top = -153.0
@@ -262,15 +257,17 @@ script = ExtResource("7_urp6f")
 [node name="Node2D" parent="." instance=ExtResource("10_n7ghd")]
 position = Vector2(0, 15)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="Particles and Light" type="Node2D" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Particles and Light"]
 modulate = Color(0.439049, 0.439049, 0.439049, 1)
 position = Vector2(18, 3)
 amount = 2
-lifetime = 1.4
+lifetime = 1.13
 trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_nvl01")
 
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Particles and Light"]
 modulate = Color(0.439049, 0.439049, 0.439049, 1)
 position = Vector2(13, 3)
 amount = 3
@@ -278,13 +275,20 @@ lifetime = 1.4
 trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_nvl01")
 
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="Particles and Light"]
 modulate = Color(0.439049, 0.439049, 0.439049, 1)
 position = Vector2(23, 3)
 amount = 2
 lifetime = 1.4
 trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_nvl01")
+
+[node name="PointLight2D" type="PointLight2D" parent="Particles and Light"]
+color = Color(1, 0.796987, 0.579379, 1)
+texture = SubResource("GradientTexture2D_n7ghd")
+texture_scale = 5.0
+
+[node name="Sounds and UI" type="Node2D" parent="."]
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="pressed" from="Menu Button" to="Menu Button" method="_on_pressed"]

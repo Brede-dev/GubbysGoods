@@ -737,7 +737,7 @@ position = Vector2(3166, 173)
 [node name="Player" parent="." instance=ExtResource("4_eow3j")]
 position = Vector2(0, -40)
 
-[node name="gubgub2" type="Sprite2D" parent="Player"]
+[node name="gubgub" type="Sprite2D" parent="Player"]
 visible = false
 position = Vector2(0, -1)
 scale = Vector2(0.25, 0.25)
@@ -821,10 +821,10 @@ text = "Checkpoint"
 scroll_active = false
 
 [node name="RichTextLabel10" type="RichTextLabel" parent="Text"]
-offset_left = -266.125
-offset_top = -83.9063
-offset_right = -30.125
-offset_bottom = -50.9063
+offset_left = -130.0
+offset_top = -93.0
+offset_right = 106.0
+offset_bottom = -60.0
 scale = Vector2(0.25, 0.25)
 text = "Definitely not a secret button"
 fit_content = true
@@ -2132,18 +2132,18 @@ position = Vector2(4552, -41)
 position = Vector2(4614, 293)
 
 [node name="Gubby Button" type="Button" parent="." node_paths=PackedStringArray("gubgub_sprite")]
-offset_left = -280.0
+offset_left = -145.0
 offset_top = -89.0
-offset_right = 68.0
+offset_right = 203.0
 offset_bottom = 259.0
 scale = Vector2(0.25, 0.25)
 icon = ExtResource("12_iotsf")
 flat = true
 script = ExtResource("17_e8heu")
-gubgub_sprite = NodePath("../Player/gubgub2")
+gubgub_sprite = NodePath("../Player/gubgub")
 
 [node name="PointLight2D" type="PointLight2D" parent="Gubby Button"]
-position = Vector2(180, 152)
+position = Vector2(172, 188)
 scale = Vector2(9.8125, 9.625)
 texture = SubResource("GradientTexture2D_rvswv")
 

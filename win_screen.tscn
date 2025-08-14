@@ -155,7 +155,7 @@ tile_size = Vector2i(8, 8)
 sources/1 = SubResource("TileSetAtlasSource_luvg0")
 sources/3 = SubResource("TileSetAtlasSource_5hoe6")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4kgk1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6jvr"]
 texture = ExtResource("3_26557")
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 1.0
@@ -166,7 +166,7 @@ texture = ExtResource("3_26557")
 
 [sub_resource type="TileSet" id="TileSet_ufkpf"]
 tile_size = Vector2i(1, 1)
-sources/0 = SubResource("TileSetAtlasSource_4kgk1")
+sources/0 = SubResource("TileSetAtlasSource_g6jvr")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_26557"]
 atlas = ExtResource("4_1txte")
@@ -231,10 +231,11 @@ scroll_active = false
 offset_left = 101.0
 offset_top = -124.0
 offset_right = 309.0
-offset_bottom = -74.0
+offset_bottom = -52.0
 scale = Vector2(0.25, 0.25)
 text = "You successfully delivered 
-the pizza to the gubbys!"
+the pizza to the gubbys! 
+(1/2) Endings"
 scroll_active = false
 
 [node name="retard button" type="Button" parent="."]

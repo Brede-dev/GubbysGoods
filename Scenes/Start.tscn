@@ -69,8 +69,8 @@ script = ExtResource("5_lmkek")
 
 [node name="Exit Button" type="Button" parent="CanvasLayer"]
 offset_left = 718.0
-offset_top = 309.0
-offset_right = 1138.0
+offset_top = 319.0
+offset_right = 1188.0
 offset_bottom = 460.0
 icon = ExtResource("7_27w08")
 flat = true

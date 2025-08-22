@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bouoxdjcgya1t"]
+[gd_scene load_steps=14 format=4 uid="uid://bouoxdjcgya1t"]
 
 [ext_resource type="Texture2D" uid="uid://qq84q64wow64" path="res://Sprites/Player/Gubby (1)-1.png.png" id="1_8704r"]
 [ext_resource type="Texture2D" uid="uid://buig7x1nfmc5p" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Restart/B_Restart1.png" id="2_321q0"]
@@ -169,6 +169,8 @@ texture = ExtResource("7_adlqg")
 tile_size = Vector2i(1, 1)
 sources/0 = SubResource("TileSetAtlasSource_p25u3")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2iq7"]
+
 [node name="gubby_win" type="Node2D"]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
@@ -201,6 +203,7 @@ offset_top = -87.0
 offset_right = 245.0
 offset_bottom = -47.0
 scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r2iq7")
 icon = ExtResource("2_321q0")
 flat = true
 script = ExtResource("3_riuia")

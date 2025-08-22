@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://y3stpb8vdj8g"]
+[gd_scene load_steps=15 format=4 uid="uid://y3stpb8vdj8g"]
 
 [ext_resource type="Texture2D" uid="uid://chh6361qk403v" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Quit/C_Quit1.png" id="1_if853"]
 [ext_resource type="Texture2D" uid="uid://4bu7857v4j3a" path="res://Sprites/Cave Tileset/cavesofgallet_tiles.png" id="1_nus4h"]
@@ -157,6 +157,12 @@ tile_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_7ahhq")
 sources/1 = SubResource("TileSetAtlasSource_u708n")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nus4h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1ui3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ahhq"]
+
 [node name="death_screen" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -180,6 +186,7 @@ offset_top = 2.0
 offset_right = 78.0
 offset_bottom = 42.0
 scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nus4h")
 icon = ExtResource("3_s44ck")
 flat = true
 script = ExtResource("4_nus4h")
@@ -190,6 +197,7 @@ offset_top = 2.0
 offset_right = 38.0
 offset_bottom = 42.0
 scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b1ui3")
 icon = ExtResource("5_b1ui3")
 flat = true
 script = ExtResource("6_7ahhq")
@@ -200,6 +208,7 @@ offset_top = 2.0
 offset_right = 118.0
 offset_bottom = 42.0
 scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7ahhq")
 icon = ExtResource("1_if853")
 flat = true
 script = ExtResource("2_f562y")

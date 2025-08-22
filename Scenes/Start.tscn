@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2i1bfpa2vlrv"]
+[gd_scene load_steps=12 format=3 uid="uid://b2i1bfpa2vlrv"]
 
 [ext_resource type="Script" uid="uid://cuqgnnjf2oqcn" path="res://Scripts/Play Button.gd" id="1_og4jd"]
 [ext_resource type="Texture2D" uid="uid://btifm1a1ln3un" path="res://Sprites/text-1748390942834 (1)-1.png (1).png" id="2_7aetl"]
@@ -8,6 +8,12 @@
 [ext_resource type="Script" uid="uid://edvjn70td333" path="res://Scenes/exit_button.gd" id="5_37b1d"]
 [ext_resource type="Script" uid="uid://cvbxdrafox56e" path="res://Scenes/settings_button.gd" id="5_lmkek"]
 [ext_resource type="Texture2D" uid="uid://cqon3p7e53tqp" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Exit/B_Exit1.png" id="7_27w08"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7aetl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27w08"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_45hv8"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -36,6 +42,7 @@ offset_left = 384.0
 offset_top = 213.0
 offset_right = 786.0
 offset_bottom = 566.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7aetl")
 text = "
 
 
@@ -62,6 +69,7 @@ offset_left = 39.0
 offset_top = 327.0
 offset_right = 398.0
 offset_bottom = 453.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_27w08")
 icon = ExtResource("5_7aetl")
 flat = true
 expand_icon = true
@@ -72,6 +80,7 @@ offset_left = 718.0
 offset_top = 319.0
 offset_right = 1188.0
 offset_bottom = 460.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_45hv8")
 icon = ExtResource("7_27w08")
 flat = true
 expand_icon = true

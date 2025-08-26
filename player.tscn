@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://y4vjepug1yfk"]
+[gd_scene load_steps=36 format=3 uid="uid://y4vjepug1yfk"]
 
 [ext_resource type="Script" uid="uid://dfirfs3haff65" path="res://Scripts/character_body_2d.gd" id="1_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://bko53pbiblu7y" path="res://Sprites/Player/Elliot (5).png" id="2_dw050"]
@@ -180,6 +180,8 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7ghd"]
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nvl01"]
 particle_flag_disable_z = true
 gravity = Vector3(0, -58.495, 0)
@@ -250,6 +252,7 @@ offset_left = 196.0
 offset_top = -162.0
 offset_right = 300.0
 offset_bottom = -122.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n7ghd")
 icon = ExtResource("6_ivps1")
 flat = true
 script = ExtResource("7_urp6f")

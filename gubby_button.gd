@@ -13,6 +13,6 @@ func _on_pressed():
 	if gubgub_sprite:
 		# Toggle the visibility of the gubgub sprite
 		gubgub_sprite.visible = !gubgub_sprite.visible
-		print("Gubgub visibility toggled: ", gubgub_sprite.visible)
+		#print("Gubgub visibility toggled: ", gubgub_sprite.visible)
 	else:
 		print("Error: gubgub_sprite node not found!")

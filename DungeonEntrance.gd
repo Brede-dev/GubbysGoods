@@ -3,8 +3,8 @@
 # Attach this script to an Area2D node
 extends Area2D
 
-@onready var overlay_scene = preload("res://DungeonOverlay.tscn")
-var overlay_instance = null
+@export var overlay_instance : Control
+#var overlay_instance = null
 var has_triggered = false
 
 func _ready():
@@ -19,11 +19,13 @@ func _on_body_entered(body):
 
 func show_dungeon_text():
 	# Instance the overlay
-	overlay_instance = overlay_scene.instantiate()
-	get_tree().current_scene.add_child(overlay_instance)
+	#overlay_instance = overlay_scene.instantiate()
+	#get_tree().current_scene.add_child(overlay_instance)
 	
 	# Start the animation sequence
+	print("PLAY ENTRANCE")
 	overlay_instance.play_entrance_sequence()
+	queue_free()
 
 # Optional: Reset the trigger if you want it to be reusable
 func reset_trigger():

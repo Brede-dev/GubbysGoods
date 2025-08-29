@@ -219,10 +219,10 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		var gubgub_sprite = $gubgub  # Direct reference since gubgub is a child of Player
 		
 		if gubgub_sprite and gubgub_sprite.visible:
-			print("Gubgub is visible! Going to special win screen!")
+			#print("Gubgub is visible! Going to special win screen!")
 			get_tree().change_scene_to_file("res://gubby_win.tscn")
 		else:
-			print("Gubgub not visible, going to normal win screen")
+			#print("Gubgub not visible, going to normal win screen")
 			get_tree().change_scene_to_file("res://win_screen.tscn")
 		
 	elif area.is_in_group("textoverlay"):

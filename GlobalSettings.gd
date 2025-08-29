@@ -52,7 +52,7 @@ func toggle_text_scaling():
 func apply_text_scaling():
 	# Apply text scaling to all current text nodes
 	var text_nodes = get_tree().get_nodes_in_group("text")
-	print("Applying text scaling to ", text_nodes.size(), " nodes")
+	#print("Applying text scaling to ", text_nodes.size(), " nodes")
 	
 	for node in text_nodes:
 		if is_instance_valid(node):
@@ -60,7 +60,7 @@ func apply_text_scaling():
 				node.scale = Vector2(1.5, 1.5)
 			else:
 				node.scale = Vector2(1.0, 1.0)
-			print("Scaled node: ", node.name, " to scale: ", node.scale)
+			#print("Scaled node: ", node.name, " to scale: ", node.scale)
 
 # Helper function to find a node by name recursively
 func find_node_by_name(parent: Node, name: String) -> Node:

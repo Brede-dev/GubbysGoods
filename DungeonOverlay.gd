@@ -4,18 +4,18 @@
 extends Control
 
 @onready var darkening_rect: ColorRect = $ColorRect
-@onready var title_label: Label = $CenterContainer/TitleLabel
+@onready var title_label: Label = $TitleLabel
 @onready var tween: Tween
 
 # Animation settings
 var darken_duration = 0.5
-var fade_in_duration = 0.8
+var fade_in_duration = 0.1
 var typing_duration = 1.2
 var fade_out_duration = 0.8
 var brighten_duration = 0.5
 
-var title_text = "The Dungeon"
-var typing_speed = 0.08  # Time between each character
+@onready var title_text = $TitleLabel.text
+var typing_speed = 0.06  # Time between each character
 
 func _ready():
 	# Set initial states

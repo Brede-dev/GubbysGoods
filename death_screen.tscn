@@ -1,13 +1,15 @@
-[gd_scene load_steps=15 format=4 uid="uid://y3stpb8vdj8g"]
+[gd_scene load_steps=19 format=4 uid="uid://y3stpb8vdj8g"]
 
 [ext_resource type="Texture2D" uid="uid://chh6361qk403v" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Quit/C_Quit1.png" id="1_if853"]
 [ext_resource type="Texture2D" uid="uid://4bu7857v4j3a" path="res://Sprites/Cave Tileset/cavesofgallet_tiles.png" id="1_nus4h"]
 [ext_resource type="Texture2D" uid="uid://5xe2ardasubl" path="res://Sprites/Cave Tileset/liquids animations (1).png" id="2_b1ui3"]
 [ext_resource type="Script" uid="uid://bfuiwsmb3uuxu" path="res://quit_button.gd" id="2_f562y"]
+[ext_resource type="PackedScene" uid="uid://bnespklg8fmdr" path="res://lava_particles.tscn" id="3_7ahhq"]
 [ext_resource type="Texture2D" uid="uid://cd8ekyybkai8d" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Restart/A_Restart1.png" id="3_s44ck"]
 [ext_resource type="Script" uid="uid://662ee67b2gxe" path="res://restart_button.gd" id="4_nus4h"]
 [ext_resource type="Texture2D" uid="uid://cq3apw6qf4r5l" path="res://Sprites/UI Buttons/Buttons Customization/Buttons/Menu/C_Menu1.png" id="5_b1ui3"]
 [ext_resource type="Script" uid="uid://b8bw2eqfcg1qc" path="res://menu_button.gd" id="6_7ahhq"]
+[ext_resource type="PackedScene" uid="uid://cgh6uby0d7ju" path="res://light.tscn" id="9_b1ui3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ahhq"]
 texture = ExtResource("1_nus4h")
@@ -163,10 +165,26 @@ sources/1 = SubResource("TileSetAtlasSource_u708n")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ahhq"]
 
+[sub_resource type="Gradient" id="Gradient_u708n"]
+offsets = PackedFloat32Array(0, 0.363636, 0.753247)
+colors = PackedColorArray(1, 1, 1, 1, 0.400698, 0.400698, 0.400698, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7ahhq"]
+gradient = SubResource("Gradient_u708n")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="death_screen" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD4//z/AAAEAAEAAFD5//v/AAAEAAEAADD6//v/AAAEAAEAADD7//v/AAAEAAEAADD8//v/AAAEAAEAADD9//v/AAAEAAEAADD+//v/AAAEAAEAADD///v/AAAEAAEAADAAAPv/AAAEAAEAADABAPv/AAAEAAEAADACAPv/AAAEAAEAADADAPv/AAAEAAEAADAEAPv/AAAEAAEAADAFAPv/AAAEAAEAADAGAPv/AAAEAAEAADAGAAQAAAAEAAEAAAAEAAQAAAAEAAEAAAAFAAQAAAAEAAEAAAADAAQAAAAEAAEAAAACAAQAAAAEAAEAAAABAAQAAAAEAAEAAAAAAAQAAAAEAAEAAAD//wQAAAAEAAEAAAD+/wQAAAAEAAEAAAD9/wQAAAAEAAEAAAD8/wQAAAAEAAEAAAD7/wQAAAAEAAEAAAD6/wQAAAAEAAEAAAD4/wMAAAAEAAEAAFD5/wMAAQAAAAwAAAD6/wMAAQAAAAwAABD7/wMAAQAAAAwAABD8/wMAAQAAAAwAAAD9/wMAAQAAAAwAAAD+/wMAAQAAAAwAABD//wMAAQAAAAwAABAAAAMAAQAAAAwAABABAAMAAQAAAAwAABACAAMAAQAAAAwAAAADAAMAAQAAAAwAABAEAAMAAQAAAAwAABAFAAMAAQAAAAwAAAAGAAMAAQAAAAwAABAHAAIAAAAEAAEAAGAGAAIAAAADAAAAAAAFAAIAAAADAAAAAAAEAAIAAAADAAAAAAADAAIAAQAAAAYAAAACAAIAAQAAAAgAAAAAAAIAAAABAAAAAAD//wIAAAADAAAAAAD+/wIAAQAAAAYAAAD9/wIAAQAAAAgAAAD8/wIAAQAAAAYAABD7/wIAAAADAAAAAAD6/wIAAAAGAAAAAAD5/wIAAAADAAAAAAD4/wIAAAAEAAEAAFD4/wEAAAAEAAEAAFD5/wEAAAADAAAAAAD6/wEAAAADAAAAAAD7/wEAAAADAAAAAAD8/wEAAAADAAAAAAD9/wEAAAAEAAgAAAD+/wEAAAADAAAAAAD//wEAAAADAAAAAAAAAAEAAAADAAAAAAABAAEAAAADAAAAAAACAAEAAAAEAAgAAAADAAEAAAADAAAAAAAEAAEAAAAEAAAAAAAFAAEAAAADAAAAAAAGAAEAAAADAAAAAAAHAAEAAAAEAAEAAGAHAAAAAAAEAAEAAGAGAAAAAAACAAAAAAAFAAAAAAADAAAAAAAEAAAAAAADAAAAAAADAAAAAAAGAAAAAAACAAAAAAAEAAgAAAABAAAAAAADAAAAAAAAAAAAAAADAAAAAAD//wAAAAADAAAAAAD+/wAAAAADAAAAAAD9/wAAAAAEAAgAAAD8/wAAAAADAAAAAAD7/wAAAAADAAAAAAD6/wAAAAAFAAAAAAD5/wAAAAADAAAAAAD4/wAAAAAEAAEAAFD5////AAAEAAAAAAD7////AAADAAAAAAD8////AAABAAAAAAD9////AAAEAAgAAAD+////AAAEAAAAAAD/////AAADAAAAAAAAAP//AAAFAAAAAAABAP//AAADAAAAAAACAP//AAAEAAgAAAADAP//AAAEAAAAAAAEAP//AAAGAAAAAAAFAP//AAADAAAAAAAGAP//AAADAAAAAAAHAP//AAAEAAEAAGAHAP7/AAAEAAEAAGAGAP7/AAADAAAAAAAFAP7/AAAGAAAAAAAEAP7/AAADAAAAAAADAP7/AAADAAAAAAACAP7/AAAEAAgAAAABAP7/AAADAAAAAAAAAP7/AAADAAAAAAD///7/AAABAAAAAAD+//7/AAADAAAAAAD9//7/AAAEAAgAAAD8//7/AAADAAAAAAD7//7/AAADAAAAAAD6//7/AAAGAAAAAAD5//7/AAAFAAAAAAD4////AAAEAAEAAFD4//7/AAAEAAEAAFD4//3/AAAEAAEAAFD5//3/AAADAAAAAAD6//3/AAABAAAAAAD7//3/AAADAAAAAAD8//3/AAADAAAAAAD9//3/AAAEAAgAAAD+//3/AAADAAAAAAD///3/AAADAAAAAAAAAP3/AAADAAAAAAABAP3/AAADAAAAAAACAP3/AAAEAAgAAAADAP3/AAADAAAAAAAEAP3/AAABAAAAAAAFAP3/AAADAAAAAAAGAP3/AAADAAAAAAAHAP3/AAAEAAEAAGAHAPz/AAAEAAEAAGAGAPz/AAABAAAAAAAFAPz/AAADAAAAAAAEAPz/AAADAAAAAAADAPz/AAAGAAAAAAACAPz/AQAAAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAABAAAAAAD9//z/AQAAAAAAAAD8//z/AAAEAAAAAAD7//z/AAAGAAAAAAD6//z/AAADAAAAAAD5//z/AAACAAAAAAAHAAMAAAAEAAEAAGAHAAQAAAAFAAEAAAD4/wQAAAAFAAEAABD4//v/AAAFAAEAAHAHAPv/AAAFAAEAACD5/wQAAAAEAAEAAAD6////AAACAAAAAAABAAIAAQAAAAYAABA=")
+tile_set = SubResource("TileSet_iigho")
+
+[node name="LavaParticles" parent="." instance=ExtResource("3_7ahhq")]
+position = Vector2(5, 21)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD5//v/AAAEAAEAADD6//v/AAAEAAEAADD7//v/AAAEAAEAADD8//v/AAAEAAEAADD9//v/AAAEAAEAADD+//v/AAAEAAEAADD///v/AAAEAAEAADAAAPv/AAAEAAEAADABAPv/AAAEAAEAADACAPv/AAAEAAEAADADAPv/AAAEAAEAADAEAPv/AAAEAAEAADAFAPv/AAAEAAEAADAGAPv/AAAEAAEAADD4//v/AAAFAAEAAHAHAPv/AAAFAAEAACA=")
 tile_set = SubResource("TileSet_iigho")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -212,6 +230,21 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_7ahhq")
 icon = ExtResource("1_if853")
 flat = true
 script = ExtResource("2_f562y")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.67
+blend_mode = 1
+
+[node name="Node2D" parent="." instance=ExtResource("9_b1ui3")]
+position = Vector2(0, 32)
+scale = Vector2(2.08, 0.680001)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-0.500002, -19)
+scale = Vector2(0.381875, 0.134375)
+color = Color(1, 0.796987, 0.579379, 1)
+texture = SubResource("GradientTexture2D_7ahhq")
+texture_scale = 5.0
 
 [connection signal="pressed" from="RestartButton" to="RestartButton" method="_on_pressed"]
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]

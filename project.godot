@@ -20,6 +20,12 @@ config/icon="uid://qq84q64wow64"
 BGMusic="*res://BGMusic.tscn"
 GlobalSettings="*res://GlobalSettings.gd"
 
+[display]
+
+window/size/mode=2
+window/size/initial_position_type=0
+window/stretch/mode="viewport"
+
 [global_group]
 
 player=""
